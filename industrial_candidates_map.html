@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6743db6e628b684c268ca9ba39d1f79b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6743db6e628b684c268ca9ba39d1f79b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6743db6e628b684c268ca9ba39d1f79b = L.map(
+                "map_6743db6e628b684c268ca9ba39d1f79b",
+                {
+                    center: [15.528999999999998, 76.590855],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8d874a9678d9e0348a33d72e5cdb2324 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8d874a9678d9e0348a33d72e5cdb2324.addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+            var tile_layer_9280388fd84a29f6c4d428aa40c00b35 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9280388fd84a29f6c4d428aa40c00b35.addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+            var tile_layer_32bf1d5d6f44cb8bb2d4bb4c8a524d3b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_32bf1d5d6f44cb8bb2d4bb4c8a524d3b.addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+            var marker_e20d63b9385e5a8046f6c6c8cb1f7324 = L.marker(
+                [15.18691, 76.65974],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_aa76c054c6be46c2ebd01fcacefcb5f0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3e7922d7d3b1d128a93b41c893082189 = $(`<div id="html_3e7922d7d3b1d128a93b41c893082189" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 20<br>      <b>Latitude:</b> 15.18691<br>      <b>Longitude:</b> 76.65974<br><br>      <b>Brightness:</b> 296.41<br>      <b>FRP:</b> 0.71<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 15<br>      <b>Active days:</b> 4<br>      <b>Persistent:</b> 1<br><br>      <b>OSM features:</b>     22<br>      <b>Nearest OSM distance:</b>     0.028 km<br>      <b>OSM name:</b>     Unknown<br>      <b>OSM type:</b>     cooling     </div>`)[0];
+                popup_aa76c054c6be46c2ebd01fcacefcb5f0.setContent(html_3e7922d7d3b1d128a93b41c893082189);
+            
+        
+
+        marker_e20d63b9385e5a8046f6c6c8cb1f7324.bindPopup(popup_aa76c054c6be46c2ebd01fcacefcb5f0)
+        ;
+
+        
+    
+    
+            marker_e20d63b9385e5a8046f6c6c8cb1f7324.bindTooltip(
+                `<div>
+                     Hotspot 20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ce1b0a117fc51f93441ebbe720644d51 = L.marker(
+                [15.17353, 76.65462],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_2a5932ab082689c6107213b791e982ca = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_28d019a8a332a3ef37a6281e4fa769aa = $(`<div id="html_28d019a8a332a3ef37a6281e4fa769aa" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 13<br>      <b>Latitude:</b> 15.17353<br>      <b>Longitude:</b> 76.65462<br><br>      <b>Brightness:</b> 312.41<br>      <b>FRP:</b> 1.95<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 15<br>      <b>Active days:</b> 4<br>      <b>Persistent:</b> 1<br><br>      <b>OSM features:</b>     23<br>      <b>Nearest OSM distance:</b>     0.066 km<br>      <b>OSM name:</b>     Unknown<br>      <b>OSM type:</b>     cooling     </div>`)[0];
+                popup_2a5932ab082689c6107213b791e982ca.setContent(html_28d019a8a332a3ef37a6281e4fa769aa);
+            
+        
+
+        marker_ce1b0a117fc51f93441ebbe720644d51.bindPopup(popup_2a5932ab082689c6107213b791e982ca)
+        ;
+
+        
+    
+    
+            marker_ce1b0a117fc51f93441ebbe720644d51.bindTooltip(
+                `<div>
+                     Hotspot 13
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_150b2bc0a6bc70a02a70454260471390 = L.marker(
+                [15.16814, 76.38044],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_58ea561a12e3e19a5f9ed1e393a3ce54 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fb964d2b3f31ac065d0612b4917cc686 = $(`<div id="html_fb964d2b3f31ac065d0612b4917cc686" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 26<br>      <b>Latitude:</b> 15.16814<br>      <b>Longitude:</b> 76.38044<br><br>      <b>Brightness:</b> 303.41<br>      <b>FRP:</b> 1.56<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 6<br>      <b>Active days:</b> 4<br>      <b>Persistent:</b> 1<br><br>      <b>OSM features:</b>     5<br>      <b>Nearest OSM distance:</b>     0.06 km<br>      <b>OSM name:</b>     Danapuram<br>      <b>OSM type:</b>     industrial     </div>`)[0];
+                popup_58ea561a12e3e19a5f9ed1e393a3ce54.setContent(html_fb964d2b3f31ac065d0612b4917cc686);
+            
+        
+
+        marker_150b2bc0a6bc70a02a70454260471390.bindPopup(popup_58ea561a12e3e19a5f9ed1e393a3ce54)
+        ;
+
+        
+    
+    
+            marker_150b2bc0a6bc70a02a70454260471390.bindTooltip(
+                `<div>
+                     Hotspot 26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fddd36a8bb86b0d59fcdd23274787e13 = L.marker(
+                [15.16912, 76.37991],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_29c8e0ddd0224414838817dec862ac96 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e0f6def928cb7927ba3704d792a868ca = $(`<div id="html_e0f6def928cb7927ba3704d792a868ca" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 8<br>      <b>Latitude:</b> 15.16912<br>      <b>Longitude:</b> 76.37991<br><br>      <b>Brightness:</b> 307.17<br>      <b>FRP:</b> 2.33<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 6<br>      <b>Active days:</b> 4<br>      <b>Persistent:</b> 1<br><br>      <b>OSM features:</b>     5<br>      <b>Nearest OSM distance:</b>     0.066 km<br>      <b>OSM name:</b>     Danapuram<br>      <b>OSM type:</b>     industrial     </div>`)[0];
+                popup_29c8e0ddd0224414838817dec862ac96.setContent(html_e0f6def928cb7927ba3704d792a868ca);
+            
+        
+
+        marker_fddd36a8bb86b0d59fcdd23274787e13.bindPopup(popup_29c8e0ddd0224414838817dec862ac96)
+        ;
+
+        
+    
+    
+            marker_fddd36a8bb86b0d59fcdd23274787e13.bindTooltip(
+                `<div>
+                     Hotspot 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_55c4c235279dd890edae06f19ab000cc = L.marker(
+                [15.33474, 76.28601],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_f06d8a7b0f4026a5cd30db441c7763fb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_762723133d5aaef03c704a6357e122ae = $(`<div id="html_762723133d5aaef03c704a6357e122ae" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 42<br>      <b>Latitude:</b> 15.33474<br>      <b>Longitude:</b> 76.28601<br><br>      <b>Brightness:</b> 302.94<br>      <b>FRP:</b> 0.81<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 4<br>      <b>Active days:</b> 2<br>      <b>Persistent:</b> 1<br><br>      <b>OSM features:</b>     5<br>      <b>Nearest OSM distance:</b>     0.357 km<br>      <b>OSM name:</b>     Unknown<br>      <b>OSM type:</b>     industrial     </div>`)[0];
+                popup_f06d8a7b0f4026a5cd30db441c7763fb.setContent(html_762723133d5aaef03c704a6357e122ae);
+            
+        
+
+        marker_55c4c235279dd890edae06f19ab000cc.bindPopup(popup_f06d8a7b0f4026a5cd30db441c7763fb)
+        ;
+
+        
+    
+    
+            marker_55c4c235279dd890edae06f19ab000cc.bindTooltip(
+                `<div>
+                     Hotspot 42
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_96034d6163ac3cd5816f05733e30811b = L.marker(
+                [17.14156, 77.18441],
+                {
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+        
+    
+        var popup_09bb54b599eb7c0ef9e3345db694ab99 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_86c401a27e26cdab35575c75da6550bd = $(`<div id="html_86c401a27e26cdab35575c75da6550bd" style="width: 100.0%; height: 100.0%;">     <b>Industrial Thermal Candidate</b><br><br>      <b>Hotspot ID:</b> 55<br>      <b>Latitude:</b> 17.14156<br>      <b>Longitude:</b> 77.18441<br><br>      <b>Brightness:</b> 308.25<br>      <b>FRP:</b> 1.55<br>      <b>Land cover:</b> Built-up<br><br>      <b>Detections:</b> 1<br>      <b>Active days:</b> 1<br>      <b>Persistent:</b> 0<br><br>      <b>OSM features:</b>     3<br>      <b>Nearest OSM distance:</b>     0.069 km<br>      <b>OSM name:</b>     Unknown<br>      <b>OSM type:</b>     industrial     </div>`)[0];
+                popup_09bb54b599eb7c0ef9e3345db694ab99.setContent(html_86c401a27e26cdab35575c75da6550bd);
+            
+        
+
+        marker_96034d6163ac3cd5816f05733e30811b.bindPopup(popup_09bb54b599eb7c0ef9e3345db694ab99)
+        ;
+
+        
+    
+    
+            marker_96034d6163ac3cd5816f05733e30811b.bindTooltip(
+                `<div>
+                     Hotspot 55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_6117e49463bbc6608996051806edafb8_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8d874a9678d9e0348a33d72e5cdb2324,
+                    "Satellite Imagery" : tile_layer_9280388fd84a29f6c4d428aa40c00b35,
+                    "OpenStreetMap" : tile_layer_32bf1d5d6f44cb8bb2d4bb4c8a524d3b,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_6117e49463bbc6608996051806edafb8 = L.control.layers(
+                layer_control_6117e49463bbc6608996051806edafb8_layers.base_layers,
+                layer_control_6117e49463bbc6608996051806edafb8_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_6743db6e628b684c268ca9ba39d1f79b);
+
+        
+</script>
+</html>

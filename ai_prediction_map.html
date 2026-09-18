@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0721c33c53eb308a736ae231769c1eb3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+
+<div style="
+position: fixed;
+bottom: 30px;
+left: 30px;
+width: 220px;
+background-color: white;
+border: 2px solid grey;
+z-index: 9999;
+font-size: 14px;
+padding: 12px;
+border-radius: 8px;
+box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+">
+
+<b>🔥 AI Thermal Classification</b>
+
+<hr>
+
+<div>
+<span style="
+display:inline-block;
+width:14px;
+height:14px;
+background:red;
+border-radius:50%;
+margin-right:8px;
+"></span>
+
+<b>Industrial</b>
+</div>
+
+<br>
+
+<div>
+<span style="
+display:inline-block;
+width:14px;
+height:14px;
+background:orange;
+border-radius:50%;
+margin-right:8px;
+"></span>
+
+<b>Agricultural</b>
+</div>
+
+<br>
+
+<div>
+<span style="
+display:inline-block;
+width:14px;
+height:14px;
+background:green;
+border-radius:50%;
+margin-right:8px;
+"></span>
+
+<b>Natural</b>
+</div>
+
+</div>
+    
+            <div class="folium-map" id="map_0721c33c53eb308a736ae231769c1eb3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0721c33c53eb308a736ae231769c1eb3 = L.map(
+                "map_0721c33c53eb308a736ae231769c1eb3",
+                {
+                    center: [15.530043387096777, 76.38618],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8ff23801fc36ab362656aea6037cceae = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8ff23801fc36ab362656aea6037cceae.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var tile_layer_000f10941a3e00befdcf3b4c257a4e86 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_000f10941a3e00befdcf3b4c257a4e86.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var tile_layer_066a7bce93fad5d891b43603ee399125 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_066a7bce93fad5d891b43603ee399125.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var feature_group_f33eac487b5f0dd53b96efbc20ba2c70 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_c35189ee0bb197bc1d8bdeb9f2fda747 = L.circleMarker(
+                [15.22531, 76.76296],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_247f6f5d4a33fc46c8c67418efda7ecc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d543140ed0c5b1562775c3f4986feee0 = $(`<div id="html_d543140ed0c5b1562775c3f4986feee0" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 4<br>     <b>Latitude:</b> 15.22531<br>     <b>Longitude:</b> 76.76296<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     39.0%      <hr>      <b>Brightness:</b> 334.33<br>     <b>FRP:</b> 1.81<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_247f6f5d4a33fc46c8c67418efda7ecc.setContent(html_d543140ed0c5b1562775c3f4986feee0);
+            
+        
+
+        circle_marker_c35189ee0bb197bc1d8bdeb9f2fda747.bindPopup(popup_247f6f5d4a33fc46c8c67418efda7ecc)
+        ;
+
+        
+    
+    
+            circle_marker_c35189ee0bb197bc1d8bdeb9f2fda747.bindTooltip(
+                `<div>
+                     Hotspot 4 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_581aa5c83f0ca3458fe70ee81c66981b = L.circleMarker(
+                [15.16912, 76.37991],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_d10bf73e98b4cb3c53cb5121e5bee34e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d06642884f903591bab8e9eea542fe40 = $(`<div id="html_d06642884f903591bab8e9eea542fe40" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 8<br>     <b>Latitude:</b> 15.16912<br>     <b>Longitude:</b> 76.37991<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     91.0%      <hr>      <b>Brightness:</b> 307.17<br>     <b>FRP:</b> 2.33<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 5<br>     <b>OSM Distance:</b> 0.066 km      </div>     </div>`)[0];
+                popup_d10bf73e98b4cb3c53cb5121e5bee34e.setContent(html_d06642884f903591bab8e9eea542fe40);
+            
+        
+
+        circle_marker_581aa5c83f0ca3458fe70ee81c66981b.bindPopup(popup_d10bf73e98b4cb3c53cb5121e5bee34e)
+        ;
+
+        
+    
+    
+            circle_marker_581aa5c83f0ca3458fe70ee81c66981b.bindTooltip(
+                `<div>
+                     Hotspot 8 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_115d0794198bcb2853de2d9394a3dbfa = L.circleMarker(
+                [15.17686, 76.65517],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_fe3dff35912d7e5054c4a3128cc3c103 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e5570832362e95d23c395e9d9a172abb = $(`<div id="html_e5570832362e95d23c395e9d9a172abb" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 11<br>     <b>Latitude:</b> 15.17686<br>     <b>Longitude:</b> 76.65517<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     56.0%      <hr>      <b>Brightness:</b> 332.84<br>     <b>FRP:</b> 1.95<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 18<br>     <b>OSM Distance:</b> 0.0133192237425884 km      </div>     </div>`)[0];
+                popup_fe3dff35912d7e5054c4a3128cc3c103.setContent(html_e5570832362e95d23c395e9d9a172abb);
+            
+        
+
+        circle_marker_115d0794198bcb2853de2d9394a3dbfa.bindPopup(popup_fe3dff35912d7e5054c4a3128cc3c103)
+        ;
+
+        
+    
+    
+            circle_marker_115d0794198bcb2853de2d9394a3dbfa.bindTooltip(
+                `<div>
+                     Hotspot 11 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a3051094309dcd87f5773817da499da = L.circleMarker(
+                [15.17631, 76.65878],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_2fe14a480adf1711b0f2d8b94670b284 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5b2f8123e64f4e8e7394a1be4f4389f3 = $(`<div id="html_5b2f8123e64f4e8e7394a1be4f4389f3" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 12<br>     <b>Latitude:</b> 15.17631<br>     <b>Longitude:</b> 76.65878<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     64.0%      <hr>      <b>Brightness:</b> 318.99<br>     <b>FRP:</b> 1.95<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 15<br>     <b>OSM Distance:</b> 0.0885363759851969 km      </div>     </div>`)[0];
+                popup_2fe14a480adf1711b0f2d8b94670b284.setContent(html_5b2f8123e64f4e8e7394a1be4f4389f3);
+            
+        
+
+        circle_marker_5a3051094309dcd87f5773817da499da.bindPopup(popup_2fe14a480adf1711b0f2d8b94670b284)
+        ;
+
+        
+    
+    
+            circle_marker_5a3051094309dcd87f5773817da499da.bindTooltip(
+                `<div>
+                     Hotspot 12 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b2b1e8b2cb14dac7936af65820d4538 = L.circleMarker(
+                [15.17353, 76.65462],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_29a1907212832f087919674277af79e9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ee05409de6325c4ca724ab5b01e4e822 = $(`<div id="html_ee05409de6325c4ca724ab5b01e4e822" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 13<br>     <b>Latitude:</b> 15.17353<br>     <b>Longitude:</b> 76.65462<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     67.0%      <hr>      <b>Brightness:</b> 312.41<br>     <b>FRP:</b> 1.95<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 23<br>     <b>OSM Distance:</b> 0.066 km      </div>     </div>`)[0];
+                popup_29a1907212832f087919674277af79e9.setContent(html_ee05409de6325c4ca724ab5b01e4e822);
+            
+        
+
+        circle_marker_5b2b1e8b2cb14dac7936af65820d4538.bindPopup(popup_29a1907212832f087919674277af79e9)
+        ;
+
+        
+    
+    
+            circle_marker_5b2b1e8b2cb14dac7936af65820d4538.bindTooltip(
+                `<div>
+                     Hotspot 13 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_223081e61a24c514a635345c08ef9928 = L.circleMarker(
+                [15.17247, 76.37917],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_90537797c5b10c3d5ef488c43e88c10d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ae754b6095da84f3c2e51728928f893f = $(`<div id="html_ae754b6095da84f3c2e51728928f893f" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 15<br>     <b>Latitude:</b> 15.17247<br>     <b>Longitude:</b> 76.37917<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     50.0%      <hr>      <b>Brightness:</b> 304.41<br>     <b>FRP:</b> 0.92<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_90537797c5b10c3d5ef488c43e88c10d.setContent(html_ae754b6095da84f3c2e51728928f893f);
+            
+        
+
+        circle_marker_223081e61a24c514a635345c08ef9928.bindPopup(popup_90537797c5b10c3d5ef488c43e88c10d)
+        ;
+
+        
+    
+    
+            circle_marker_223081e61a24c514a635345c08ef9928.bindTooltip(
+                `<div>
+                     Hotspot 15 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c355f594cfcea8c71056648dee33e4cb = L.circleMarker(
+                [15.16912, 76.37862],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_9ee0984376bd905379159170112e02be = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8b7607510ab70c249c839fb5097e895c = $(`<div id="html_8b7607510ab70c249c839fb5097e895c" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 16<br>     <b>Latitude:</b> 15.16912<br>     <b>Longitude:</b> 76.37862<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     55.5%      <hr>      <b>Brightness:</b> 302.57<br>     <b>FRP:</b> 0.92<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_9ee0984376bd905379159170112e02be.setContent(html_8b7607510ab70c249c839fb5097e895c);
+            
+        
+
+        circle_marker_c355f594cfcea8c71056648dee33e4cb.bindPopup(popup_9ee0984376bd905379159170112e02be)
+        ;
+
+        
+    
+    
+            circle_marker_c355f594cfcea8c71056648dee33e4cb.bindTooltip(
+                `<div>
+                     Hotspot 16 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efe54d4f9c718e691fb6469e388e082c = L.circleMarker(
+                [15.22512, 76.76299],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_d798ad488608354d55b5e43cc1046811 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2516eebd2862f78ef3e9d4c0acf44bd0 = $(`<div id="html_2516eebd2862f78ef3e9d4c0acf44bd0" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 18<br>     <b>Latitude:</b> 15.22512<br>     <b>Longitude:</b> 76.76299<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     93.0%      <hr>      <b>Brightness:</b> 300.51<br>     <b>FRP:</b> 0.96<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 2<br>     <b>OSM Distance:</b> 0.201483923431826 km      </div>     </div>`)[0];
+                popup_d798ad488608354d55b5e43cc1046811.setContent(html_2516eebd2862f78ef3e9d4c0acf44bd0);
+            
+        
+
+        circle_marker_efe54d4f9c718e691fb6469e388e082c.bindPopup(popup_d798ad488608354d55b5e43cc1046811)
+        ;
+
+        
+    
+    
+            circle_marker_efe54d4f9c718e691fb6469e388e082c.bindTooltip(
+                `<div>
+                     Hotspot 18 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef9e249879513af07e80019c468bb803 = L.circleMarker(
+                [15.18691, 76.65974],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_3db6acefe82a355fa58379309bd52932 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c6e170be97fbf50b4ea5dc225193b22e = $(`<div id="html_c6e170be97fbf50b4ea5dc225193b22e" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 20<br>     <b>Latitude:</b> 15.18691<br>     <b>Longitude:</b> 76.65974<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     56.5%      <hr>      <b>Brightness:</b> 296.41<br>     <b>FRP:</b> 0.71<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 22<br>     <b>OSM Distance:</b> 0.028 km      </div>     </div>`)[0];
+                popup_3db6acefe82a355fa58379309bd52932.setContent(html_c6e170be97fbf50b4ea5dc225193b22e);
+            
+        
+
+        circle_marker_ef9e249879513af07e80019c468bb803.bindPopup(popup_3db6acefe82a355fa58379309bd52932)
+        ;
+
+        
+    
+    
+            circle_marker_ef9e249879513af07e80019c468bb803.bindTooltip(
+                `<div>
+                     Hotspot 20 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_338cd888b94f8f3f8c748cdb47881f62 = L.circleMarker(
+                [15.18168, 76.66698],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_a7d10ce9916f798b1144e091d18b72bd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_97a4d50b5d0aaa24f1634332be812a17 = $(`<div id="html_97a4d50b5d0aaa24f1634332be812a17" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 21<br>     <b>Latitude:</b> 15.18168<br>     <b>Longitude:</b> 76.66698<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     52.5%      <hr>      <b>Brightness:</b> 302.65<br>     <b>FRP:</b> 0.75<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 15<br>     <b>OSM Distance:</b> 0.0309450396189334 km      </div>     </div>`)[0];
+                popup_a7d10ce9916f798b1144e091d18b72bd.setContent(html_97a4d50b5d0aaa24f1634332be812a17);
+            
+        
+
+        circle_marker_338cd888b94f8f3f8c748cdb47881f62.bindPopup(popup_a7d10ce9916f798b1144e091d18b72bd)
+        ;
+
+        
+    
+    
+            circle_marker_338cd888b94f8f3f8c748cdb47881f62.bindTooltip(
+                `<div>
+                     Hotspot 21 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_920f9e039b779a3896e627a1273b954a = L.circleMarker(
+                [15.17381, 76.69381],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_0cb3447dd66880dfacc41ec3480ead84 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d6047b2f51e58da405f2115019373693 = $(`<div id="html_d6047b2f51e58da405f2115019373693" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 22<br>     <b>Latitude:</b> 15.17381<br>     <b>Longitude:</b> 76.69381<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     88.0%      <hr>      <b>Brightness:</b> 295.21<br>     <b>FRP:</b> 0.23<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 2<br>     <b>OSM Distance:</b> 1.9449073816874056 km      </div>     </div>`)[0];
+                popup_0cb3447dd66880dfacc41ec3480ead84.setContent(html_d6047b2f51e58da405f2115019373693);
+            
+        
+
+        circle_marker_920f9e039b779a3896e627a1273b954a.bindPopup(popup_0cb3447dd66880dfacc41ec3480ead84)
+        ;
+
+        
+    
+    
+            circle_marker_920f9e039b779a3896e627a1273b954a.bindTooltip(
+                `<div>
+                     Hotspot 22 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_849993d5fc9a13abf7c773bc72c94aa6 = L.circleMarker(
+                [15.17437, 76.65804],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_049d2a4e23bf846a501a11ceecc6433f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1240241d76443d4b4188e366b7fe1336 = $(`<div id="html_1240241d76443d4b4188e366b7fe1336" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 24<br>     <b>Latitude:</b> 15.17437<br>     <b>Longitude:</b> 76.65804<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     57.0%      <hr>      <b>Brightness:</b> 298.29<br>     <b>FRP:</b> 0.45<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 15<br>     <b>OSM Distance:</b> 0.1457433812552207 km      </div>     </div>`)[0];
+                popup_049d2a4e23bf846a501a11ceecc6433f.setContent(html_1240241d76443d4b4188e366b7fe1336);
+            
+        
+
+        circle_marker_849993d5fc9a13abf7c773bc72c94aa6.bindPopup(popup_049d2a4e23bf846a501a11ceecc6433f)
+        ;
+
+        
+    
+    
+            circle_marker_849993d5fc9a13abf7c773bc72c94aa6.bindTooltip(
+                `<div>
+                     Hotspot 24 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_20cee92d9d9b49ff406a0c543dc30041 = L.circleMarker(
+                [15.17293, 76.37693],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_67b24213c4d7a26f1f0a08eb2d5eee27 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c57bcc678f5230f11648e493cbb7d4d1 = $(`<div id="html_c57bcc678f5230f11648e493cbb7d4d1" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 25<br>     <b>Latitude:</b> 15.17293<br>     <b>Longitude:</b> 76.37693<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     57.0%      <hr>      <b>Brightness:</b> 298.76<br>     <b>FRP:</b> 0.56<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_67b24213c4d7a26f1f0a08eb2d5eee27.setContent(html_c57bcc678f5230f11648e493cbb7d4d1);
+            
+        
+
+        circle_marker_20cee92d9d9b49ff406a0c543dc30041.bindPopup(popup_67b24213c4d7a26f1f0a08eb2d5eee27)
+        ;
+
+        
+    
+    
+            circle_marker_20cee92d9d9b49ff406a0c543dc30041.bindTooltip(
+                `<div>
+                     Hotspot 25 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_36d46a0042affac06a418a0743c4869a = L.circleMarker(
+                [15.16814, 76.38044],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_0e0d78ba2af3053cfe992e2ee267154f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c650b583e280f3d5739f0cd964b202fc = $(`<div id="html_c650b583e280f3d5739f0cd964b202fc" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 26<br>     <b>Latitude:</b> 15.16814<br>     <b>Longitude:</b> 76.38044<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     82.5%      <hr>      <b>Brightness:</b> 303.41<br>     <b>FRP:</b> 1.56<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 5<br>     <b>OSM Distance:</b> 0.06 km      </div>     </div>`)[0];
+                popup_0e0d78ba2af3053cfe992e2ee267154f.setContent(html_c650b583e280f3d5739f0cd964b202fc);
+            
+        
+
+        circle_marker_36d46a0042affac06a418a0743c4869a.bindPopup(popup_0e0d78ba2af3053cfe992e2ee267154f)
+        ;
+
+        
+    
+    
+            circle_marker_36d46a0042affac06a418a0743c4869a.bindTooltip(
+                `<div>
+                     Hotspot 26 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b67ebf98525c90a4278704466122bedf = L.circleMarker(
+                [15.17592, 76.65578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_50d39a4668ec2b569abc68b34827cfab = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1a2c2e2ad56dc5f2cb7b711ba3799a6c = $(`<div id="html_1a2c2e2ad56dc5f2cb7b711ba3799a6c" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 27<br>     <b>Latitude:</b> 15.17592<br>     <b>Longitude:</b> 76.65578<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     37.0%      <hr>      <b>Brightness:</b> 333.75<br>     <b>FRP:</b> 4.36<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_50d39a4668ec2b569abc68b34827cfab.setContent(html_1a2c2e2ad56dc5f2cb7b711ba3799a6c);
+            
+        
+
+        circle_marker_b67ebf98525c90a4278704466122bedf.bindPopup(popup_50d39a4668ec2b569abc68b34827cfab)
+        ;
+
+        
+    
+    
+            circle_marker_b67ebf98525c90a4278704466122bedf.bindTooltip(
+                `<div>
+                     Hotspot 27 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d6d43a36c6dc652353d3d91fd4a76f2 = L.circleMarker(
+                [15.17878, 76.65715],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_d0bbe7fb3b57f1fb3daa7bb5e6bd7568 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c45319b53394aab3d65c4704c71ded11 = $(`<div id="html_c45319b53394aab3d65c4704c71ded11" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 34<br>     <b>Latitude:</b> 15.17878<br>     <b>Longitude:</b> 76.65715<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     42.5%      <hr>      <b>Brightness:</b> 315.21<br>     <b>FRP:</b> 2.73<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_d0bbe7fb3b57f1fb3daa7bb5e6bd7568.setContent(html_c45319b53394aab3d65c4704c71ded11);
+            
+        
+
+        circle_marker_6d6d43a36c6dc652353d3d91fd4a76f2.bindPopup(popup_d0bbe7fb3b57f1fb3daa7bb5e6bd7568)
+        ;
+
+        
+    
+    
+            circle_marker_6d6d43a36c6dc652353d3d91fd4a76f2.bindTooltip(
+                `<div>
+                     Hotspot 34 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e16306b387478a4edde5ea8cd3d333bb = L.circleMarker(
+                [15.17304, 76.37813],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_a9607e2b2f21f3feaf402682e24632f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a3d29dca0af2c1fc518876a8d8f4bc46 = $(`<div id="html_a3d29dca0af2c1fc518876a8d8f4bc46" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 36<br>     <b>Latitude:</b> 15.17304<br>     <b>Longitude:</b> 76.37813<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     86.0%      <hr>      <b>Brightness:</b> 302.91<br>     <b>FRP:</b> 1.12<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 6<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 4<br>     <b>OSM Distance:</b> 0.0987323595444488 km      </div>     </div>`)[0];
+                popup_a9607e2b2f21f3feaf402682e24632f3.setContent(html_a3d29dca0af2c1fc518876a8d8f4bc46);
+            
+        
+
+        circle_marker_e16306b387478a4edde5ea8cd3d333bb.bindPopup(popup_a9607e2b2f21f3feaf402682e24632f3)
+        ;
+
+        
+    
+    
+            circle_marker_e16306b387478a4edde5ea8cd3d333bb.bindTooltip(
+                `<div>
+                     Hotspot 36 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_486e78290ba41c524005857f350f6cac = L.circleMarker(
+                [15.18274, 76.66614],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_80c41e153ff164881c6cdd6a0fb0827c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_055f00bf202233252d3371d8943000e7 = $(`<div id="html_055f00bf202233252d3371d8943000e7" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 39<br>     <b>Latitude:</b> 15.18274<br>     <b>Longitude:</b> 76.66614<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     64.5%      <hr>      <b>Brightness:</b> 305.28<br>     <b>FRP:</b> 1.96<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 15<br>     <b>OSM Distance:</b> 0.0302613586441856 km      </div>     </div>`)[0];
+                popup_80c41e153ff164881c6cdd6a0fb0827c.setContent(html_055f00bf202233252d3371d8943000e7);
+            
+        
+
+        circle_marker_486e78290ba41c524005857f350f6cac.bindPopup(popup_80c41e153ff164881c6cdd6a0fb0827c)
+        ;
+
+        
+    
+    
+            circle_marker_486e78290ba41c524005857f350f6cac.bindTooltip(
+                `<div>
+                     Hotspot 39 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7df20a013f106d62ae9b8c1788a19025 = L.circleMarker(
+                [15.33474, 76.28601],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_51223610504b51be0a3d9b1abb735c52 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a36ca3d4a325892e1bdf99a1d5e9bbf3 = $(`<div id="html_a36ca3d4a325892e1bdf99a1d5e9bbf3" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 42<br>     <b>Latitude:</b> 15.33474<br>     <b>Longitude:</b> 76.28601<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     94.5%      <hr>      <b>Brightness:</b> 302.94<br>     <b>FRP:</b> 0.81<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 4<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 5<br>     <b>OSM Distance:</b> 0.357 km      </div>     </div>`)[0];
+                popup_51223610504b51be0a3d9b1abb735c52.setContent(html_a36ca3d4a325892e1bdf99a1d5e9bbf3);
+            
+        
+
+        circle_marker_7df20a013f106d62ae9b8c1788a19025.bindPopup(popup_51223610504b51be0a3d9b1abb735c52)
+        ;
+
+        
+    
+    
+            circle_marker_7df20a013f106d62ae9b8c1788a19025.bindTooltip(
+                `<div>
+                     Hotspot 42 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ffa52895654d6c9592d591e13f8582d = L.circleMarker(
+                [15.33622, 76.27875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_3282842533643ab0d9180ba84ffb7cc1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4382b4baa5e8e2ebc3ecaf991a6c8519 = $(`<div id="html_4382b4baa5e8e2ebc3ecaf991a6c8519" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 43<br>     <b>Latitude:</b> 15.33622<br>     <b>Longitude:</b> 76.27875<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     51.5%      <hr>      <b>Brightness:</b> 309.54<br>     <b>FRP:</b> 0.9<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 4<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_3282842533643ab0d9180ba84ffb7cc1.setContent(html_4382b4baa5e8e2ebc3ecaf991a6c8519);
+            
+        
+
+        circle_marker_8ffa52895654d6c9592d591e13f8582d.bindPopup(popup_3282842533643ab0d9180ba84ffb7cc1)
+        ;
+
+        
+    
+    
+            circle_marker_8ffa52895654d6c9592d591e13f8582d.bindTooltip(
+                `<div>
+                     Hotspot 43 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9d5a640eebed6ca57d51c07bfad4f08 = L.circleMarker(
+                [15.33695, 76.27518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_4c0eca85a27de390d0de6b62d51e17c2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_64145fba9b971ec3b37155dbb7d979de = $(`<div id="html_64145fba9b971ec3b37155dbb7d979de" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 44<br>     <b>Latitude:</b> 15.33695<br>     <b>Longitude:</b> 76.27518<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     91.0%      <hr>      <b>Brightness:</b> 303.69<br>     <b>FRP:</b> 0.9<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 4<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 3<br>     <b>OSM Distance:</b> 0.8047153931882459 km      </div>     </div>`)[0];
+                popup_4c0eca85a27de390d0de6b62d51e17c2.setContent(html_64145fba9b971ec3b37155dbb7d979de);
+            
+        
+
+        circle_marker_f9d5a640eebed6ca57d51c07bfad4f08.bindPopup(popup_4c0eca85a27de390d0de6b62d51e17c2)
+        ;
+
+        
+    
+    
+            circle_marker_f9d5a640eebed6ca57d51c07bfad4f08.bindTooltip(
+                `<div>
+                     Hotspot 44 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c0eb82416f49049be9d95d3b9aa7c66 = L.circleMarker(
+                [15.17474, 76.65694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f33eac487b5f0dd53b96efbc20ba2c70);
+        
+    
+        var popup_2b8cdf02192084e9c75d9fdcb2a5cba8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f0b8208ecd7e416938762a7bc098b232 = $(`<div id="html_f0b8208ecd7e416938762a7bc098b232" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 56<br>     <b>Latitude:</b> 15.17474<br>     <b>Longitude:</b> 76.65694<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Industrial     </span>      <br>      <b>Model Probability:</b>     37.0%      <hr>      <b>Brightness:</b> 336.59<br>     <b>FRP:</b> 6.22<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_2b8cdf02192084e9c75d9fdcb2a5cba8.setContent(html_f0b8208ecd7e416938762a7bc098b232);
+            
+        
+
+        circle_marker_3c0eb82416f49049be9d95d3b9aa7c66.bindPopup(popup_2b8cdf02192084e9c75d9fdcb2a5cba8)
+        ;
+
+        
+    
+    
+            circle_marker_3c0eb82416f49049be9d95d3b9aa7c66.bindTooltip(
+                `<div>
+                     Hotspot 56 - Industrial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f33eac487b5f0dd53b96efbc20ba2c70.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_fdd13da8fc63a545ba1bea3efea5aed8 = L.circleMarker(
+                [15.82326, 76.42226],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_fef80ca44a77dfea44eb61ac27a0ce7a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5b96f1039140420a9d4d590f4c471c1a = $(`<div id="html_5b96f1039140420a9d4d590f4c471c1a" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 0<br>     <b>Latitude:</b> 15.82326<br>     <b>Longitude:</b> 76.42226<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     81.0%      <hr>      <b>Brightness:</b> 332.69<br>     <b>FRP:</b> 2.48<br>     <b>Land Cover:</b> Shrubland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_fef80ca44a77dfea44eb61ac27a0ce7a.setContent(html_5b96f1039140420a9d4d590f4c471c1a);
+            
+        
+
+        circle_marker_fdd13da8fc63a545ba1bea3efea5aed8.bindPopup(popup_fef80ca44a77dfea44eb61ac27a0ce7a)
+        ;
+
+        
+    
+    
+            circle_marker_fdd13da8fc63a545ba1bea3efea5aed8.bindTooltip(
+                `<div>
+                     Hotspot 0 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb8a78e543112e91856a34c6be70bed3 = L.circleMarker(
+                [15.40017, 77.02663],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_21e2b78acd3e818d92db125baec62e88 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ae6771d487822ed71b69d618d980f3c4 = $(`<div id="html_ae6771d487822ed71b69d618d980f3c4" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 1<br>     <b>Latitude:</b> 15.40017<br>     <b>Longitude:</b> 77.02663<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 336.03<br>     <b>FRP:</b> 3.03<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_21e2b78acd3e818d92db125baec62e88.setContent(html_ae6771d487822ed71b69d618d980f3c4);
+            
+        
+
+        circle_marker_fb8a78e543112e91856a34c6be70bed3.bindPopup(popup_21e2b78acd3e818d92db125baec62e88)
+        ;
+
+        
+    
+    
+            circle_marker_fb8a78e543112e91856a34c6be70bed3.bindTooltip(
+                `<div>
+                     Hotspot 1 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91941b6acd12c2182913d38a717a346f = L.circleMarker(
+                [15.21043, 75.79651],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_89856f0dc3d1a678238c4552555ef6ca = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_028d80b643ac59c57df99100a6d2d8aa = $(`<div id="html_028d80b643ac59c57df99100a6d2d8aa" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 2<br>     <b>Latitude:</b> 15.21043<br>     <b>Longitude:</b> 75.79651<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 337.14<br>     <b>FRP:</b> 3.93<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_89856f0dc3d1a678238c4552555ef6ca.setContent(html_028d80b643ac59c57df99100a6d2d8aa);
+            
+        
+
+        circle_marker_91941b6acd12c2182913d38a717a346f.bindPopup(popup_89856f0dc3d1a678238c4552555ef6ca)
+        ;
+
+        
+    
+    
+            circle_marker_91941b6acd12c2182913d38a717a346f.bindTooltip(
+                `<div>
+                     Hotspot 2 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_387fa6dfe1f46ad189754a82c0742b97 = L.circleMarker(
+                [15.20712, 75.79704],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_4feb9a103cb6920b98d72a293f646084 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9e467b0057e6816384801a4934da7e1b = $(`<div id="html_9e467b0057e6816384801a4934da7e1b" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 3<br>     <b>Latitude:</b> 15.20712<br>     <b>Longitude:</b> 75.79704<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     95.0%      <hr>      <b>Brightness:</b> 339.7<br>     <b>FRP:</b> 1.84<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_4feb9a103cb6920b98d72a293f646084.setContent(html_9e467b0057e6816384801a4934da7e1b);
+            
+        
+
+        circle_marker_387fa6dfe1f46ad189754a82c0742b97.bindPopup(popup_4feb9a103cb6920b98d72a293f646084)
+        ;
+
+        
+    
+    
+            circle_marker_387fa6dfe1f46ad189754a82c0742b97.bindTooltip(
+                `<div>
+                     Hotspot 3 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b87be6afa42544688cf459a47f8c224 = L.circleMarker(
+                [16.61314, 75.89799],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_5528811e86cca02d6a741dab74fbc598 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_030013c415e5e9503dd34b7ac8da1933 = $(`<div id="html_030013c415e5e9503dd34b7ac8da1933" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 5<br>     <b>Latitude:</b> 16.61314<br>     <b>Longitude:</b> 75.89799<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 338.35<br>     <b>FRP:</b> 2.37<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_5528811e86cca02d6a741dab74fbc598.setContent(html_030013c415e5e9503dd34b7ac8da1933);
+            
+        
+
+        circle_marker_7b87be6afa42544688cf459a47f8c224.bindPopup(popup_5528811e86cca02d6a741dab74fbc598)
+        ;
+
+        
+    
+    
+            circle_marker_7b87be6afa42544688cf459a47f8c224.bindTooltip(
+                `<div>
+                     Hotspot 5 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3776019e644e4253699687cd6cdacdc7 = L.circleMarker(
+                [17.30929, 77.62043],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_bc619f258407901f89cd62d10369f8bf = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5d0357e54db8facadda8581c1daa4046 = $(`<div id="html_5d0357e54db8facadda8581c1daa4046" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 6<br>     <b>Latitude:</b> 17.30929<br>     <b>Longitude:</b> 77.62043<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 330.79<br>     <b>FRP:</b> 3.08<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 1<br>     <b>OSM Distance:</b> 0.9688307778584584 km      </div>     </div>`)[0];
+                popup_bc619f258407901f89cd62d10369f8bf.setContent(html_5d0357e54db8facadda8581c1daa4046);
+            
+        
+
+        circle_marker_3776019e644e4253699687cd6cdacdc7.bindPopup(popup_bc619f258407901f89cd62d10369f8bf)
+        ;
+
+        
+    
+    
+            circle_marker_3776019e644e4253699687cd6cdacdc7.bindTooltip(
+                `<div>
+                     Hotspot 6 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_742ae807b72f7ef8ce256e6e87605780 = L.circleMarker(
+                [17.69838, 75.36028],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_35eb217b68e2858f187e86dc82830b15 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4ad9e35cb7f46edfc36495f46d8133ae = $(`<div id="html_4ad9e35cb7f46edfc36495f46d8133ae" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 7<br>     <b>Latitude:</b> 17.69838<br>     <b>Longitude:</b> 75.36028<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     96.5%      <hr>      <b>Brightness:</b> 331.99<br>     <b>FRP:</b> 1.85<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_35eb217b68e2858f187e86dc82830b15.setContent(html_4ad9e35cb7f46edfc36495f46d8133ae);
+            
+        
+
+        circle_marker_742ae807b72f7ef8ce256e6e87605780.bindPopup(popup_35eb217b68e2858f187e86dc82830b15)
+        ;
+
+        
+    
+    
+            circle_marker_742ae807b72f7ef8ce256e6e87605780.bindTooltip(
+                `<div>
+                     Hotspot 7 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4487a2dc0d44df8f8a48d1f75fcfdc36 = L.circleMarker(
+                [15.16826, 76.67259],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_9708a56dd3130ee129030d19f59f15d8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6f4ff9e97b62be7c21705eb01d0e0171 = $(`<div id="html_6f4ff9e97b62be7c21705eb01d0e0171" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 14<br>     <b>Latitude:</b> 15.16826<br>     <b>Longitude:</b> 76.67259<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     74.5%      <hr>      <b>Brightness:</b> 314.56<br>     <b>FRP:</b> 2.01<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 14<br>     <b>OSM Distance:</b> 0.1076160809932254 km      </div>     </div>`)[0];
+                popup_9708a56dd3130ee129030d19f59f15d8.setContent(html_6f4ff9e97b62be7c21705eb01d0e0171);
+            
+        
+
+        circle_marker_4487a2dc0d44df8f8a48d1f75fcfdc36.bindPopup(popup_9708a56dd3130ee129030d19f59f15d8)
+        ;
+
+        
+    
+    
+            circle_marker_4487a2dc0d44df8f8a48d1f75fcfdc36.bindTooltip(
+                `<div>
+                     Hotspot 14 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b4ad26547caa965ade2d0931f009ce1 = L.circleMarker(
+                [15.02515, 76.50147],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_aa9b2cfba1d220a86d23ec75c627e6b6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_022dbeae474ba1c5c213de9147e9cc29 = $(`<div id="html_022dbeae474ba1c5c213de9147e9cc29" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 17<br>     <b>Latitude:</b> 15.02515<br>     <b>Longitude:</b> 76.50147<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     82.0%      <hr>      <b>Brightness:</b> 309.08<br>     <b>FRP:</b> 0.8<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_aa9b2cfba1d220a86d23ec75c627e6b6.setContent(html_022dbeae474ba1c5c213de9147e9cc29);
+            
+        
+
+        circle_marker_9b4ad26547caa965ade2d0931f009ce1.bindPopup(popup_aa9b2cfba1d220a86d23ec75c627e6b6)
+        ;
+
+        
+    
+    
+            circle_marker_9b4ad26547caa965ade2d0931f009ce1.bindTooltip(
+                `<div>
+                     Hotspot 17 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72d0b27f949a29001c2fbbdff8b278e1 = L.circleMarker(
+                [15.37479, 75.96941],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_bb0ff8451317fffa7d4345498f2171a0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7343acc69fcc3c203540092cb7a89ae1 = $(`<div id="html_7343acc69fcc3c203540092cb7a89ae1" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 28<br>     <b>Latitude:</b> 15.37479<br>     <b>Longitude:</b> 75.96941<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 338.72<br>     <b>FRP:</b> 10.11<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_bb0ff8451317fffa7d4345498f2171a0.setContent(html_7343acc69fcc3c203540092cb7a89ae1);
+            
+        
+
+        circle_marker_72d0b27f949a29001c2fbbdff8b278e1.bindPopup(popup_bb0ff8451317fffa7d4345498f2171a0)
+        ;
+
+        
+    
+    
+            circle_marker_72d0b27f949a29001c2fbbdff8b278e1.bindTooltip(
+                `<div>
+                     Hotspot 28 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c864f8a0e4c29b069df64d287055b53b = L.circleMarker(
+                [15.37652, 75.97082],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_da5e6a82913e5db06c296d2624fd61d6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c2ef37ce7a41a44e011976c2618a8670 = $(`<div id="html_c2ef37ce7a41a44e011976c2618a8670" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 29<br>     <b>Latitude:</b> 15.37652<br>     <b>Longitude:</b> 75.97082<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 340.52<br>     <b>FRP:</b> 13.29<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_da5e6a82913e5db06c296d2624fd61d6.setContent(html_c2ef37ce7a41a44e011976c2618a8670);
+            
+        
+
+        circle_marker_c864f8a0e4c29b069df64d287055b53b.bindPopup(popup_da5e6a82913e5db06c296d2624fd61d6)
+        ;
+
+        
+    
+    
+            circle_marker_c864f8a0e4c29b069df64d287055b53b.bindTooltip(
+                `<div>
+                     Hotspot 29 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a229b9eb8497734f6840e949c55e53f = L.circleMarker(
+                [15.38841, 75.17694],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_35edb1780f0d58d308e9f5223cfdd1aa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4657b81119cec6fa431fb14d65ba4e87 = $(`<div id="html_4657b81119cec6fa431fb14d65ba4e87" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 30<br>     <b>Latitude:</b> 15.38841<br>     <b>Longitude:</b> 75.17694<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 334.14<br>     <b>FRP:</b> 2.82<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_35edb1780f0d58d308e9f5223cfdd1aa.setContent(html_4657b81119cec6fa431fb14d65ba4e87);
+            
+        
+
+        circle_marker_7a229b9eb8497734f6840e949c55e53f.bindPopup(popup_35edb1780f0d58d308e9f5223cfdd1aa)
+        ;
+
+        
+    
+    
+            circle_marker_7a229b9eb8497734f6840e949c55e53f.bindTooltip(
+                `<div>
+                     Hotspot 30 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad6e88a5c8f91c7ada1ea3a7b9c174a5 = L.circleMarker(
+                [15.62385, 76.98132],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_50402e746961d3d4265e12e7b2868629 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5adb9f120c221163f534bcd19bc8913a = $(`<div id="html_5adb9f120c221163f534bcd19bc8913a" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 31<br>     <b>Latitude:</b> 15.62385<br>     <b>Longitude:</b> 76.98132<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 334.76<br>     <b>FRP:</b> 4.54<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_50402e746961d3d4265e12e7b2868629.setContent(html_5adb9f120c221163f534bcd19bc8913a);
+            
+        
+
+        circle_marker_ad6e88a5c8f91c7ada1ea3a7b9c174a5.bindPopup(popup_50402e746961d3d4265e12e7b2868629)
+        ;
+
+        
+    
+    
+            circle_marker_ad6e88a5c8f91c7ada1ea3a7b9c174a5.bindTooltip(
+                `<div>
+                     Hotspot 31 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b1385945f5666aa9ea4e10794a0901e = L.circleMarker(
+                [15.59263, 76.72092],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_f9ab7e0b87d0fa2fce8da37fd264a025 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7569e89c3938a6c12aea73677b7ec7fa = $(`<div id="html_7569e89c3938a6c12aea73677b7ec7fa" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 32<br>     <b>Latitude:</b> 15.59263<br>     <b>Longitude:</b> 76.72092<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     81.5%      <hr>      <b>Brightness:</b> 337.81<br>     <b>FRP:</b> 11.21<br>     <b>Land Cover:</b> Shrubland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_f9ab7e0b87d0fa2fce8da37fd264a025.setContent(html_7569e89c3938a6c12aea73677b7ec7fa);
+            
+        
+
+        circle_marker_6b1385945f5666aa9ea4e10794a0901e.bindPopup(popup_f9ab7e0b87d0fa2fce8da37fd264a025)
+        ;
+
+        
+    
+    
+            circle_marker_6b1385945f5666aa9ea4e10794a0901e.bindTooltip(
+                `<div>
+                     Hotspot 32 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45aeac1974f28ba92064c5607b3ea5a6 = L.circleMarker(
+                [15.96467, 76.64512],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_64ef0ac17a8e10137998099ea2e6fdfb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_22922ec6df9b340020ffd02eccf2a466 = $(`<div id="html_22922ec6df9b340020ffd02eccf2a466" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 33<br>     <b>Latitude:</b> 15.96467<br>     <b>Longitude:</b> 76.64512<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 338.41<br>     <b>FRP:</b> 6.84<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_64ef0ac17a8e10137998099ea2e6fdfb.setContent(html_22922ec6df9b340020ffd02eccf2a466);
+            
+        
+
+        circle_marker_45aeac1974f28ba92064c5607b3ea5a6.bindPopup(popup_64ef0ac17a8e10137998099ea2e6fdfb)
+        ;
+
+        
+    
+    
+            circle_marker_45aeac1974f28ba92064c5607b3ea5a6.bindTooltip(
+                `<div>
+                     Hotspot 33 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e1f6d11e666dc988c0448d344c16866 = L.circleMarker(
+                [15.07159, 76.86485],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_d636912c84eb9cdedfb1f1b680fcab8c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7855c57e18be072c013becdfb7998dbc = $(`<div id="html_7855c57e18be072c013becdfb7998dbc" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 37<br>     <b>Latitude:</b> 15.07159<br>     <b>Longitude:</b> 76.86485<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     66.0%      <hr>      <b>Brightness:</b> 304.18<br>     <b>FRP:</b> 1.2<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 3<br>     <b>OSM Distance:</b> 0.1108286315960751 km      </div>     </div>`)[0];
+                popup_d636912c84eb9cdedfb1f1b680fcab8c.setContent(html_7855c57e18be072c013becdfb7998dbc);
+            
+        
+
+        circle_marker_7e1f6d11e666dc988c0448d344c16866.bindPopup(popup_d636912c84eb9cdedfb1f1b680fcab8c)
+        ;
+
+        
+    
+    
+            circle_marker_7e1f6d11e666dc988c0448d344c16866.bindTooltip(
+                `<div>
+                     Hotspot 37 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb9ecf29479889d13e823a21a11d26e2 = L.circleMarker(
+                [15.30107, 76.22134],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_4d26fc047933632e3ab255a9adb2cde0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8ac2b9c6d10cfaeb45ae8dd44ebef0db = $(`<div id="html_8ac2b9c6d10cfaeb45ae8dd44ebef0db" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 38<br>     <b>Latitude:</b> 15.30107<br>     <b>Longitude:</b> 76.22134<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     58.5%      <hr>      <b>Brightness:</b> 302.63<br>     <b>FRP:</b> 0.48<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_4d26fc047933632e3ab255a9adb2cde0.setContent(html_8ac2b9c6d10cfaeb45ae8dd44ebef0db);
+            
+        
+
+        circle_marker_cb9ecf29479889d13e823a21a11d26e2.bindPopup(popup_4d26fc047933632e3ab255a9adb2cde0)
+        ;
+
+        
+    
+    
+            circle_marker_cb9ecf29479889d13e823a21a11d26e2.bindTooltip(
+                `<div>
+                     Hotspot 38 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a8e4afc22b568a41b2b2dbcdc1c560e = L.circleMarker(
+                [15.17487, 76.6763],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_151ec7f5febd9dad3a4f74e0e242b811 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_94eef6667a9d9f320682ed268c7f6d56 = $(`<div id="html_94eef6667a9d9f320682ed268c7f6d56" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 40<br>     <b>Latitude:</b> 15.17487<br>     <b>Longitude:</b> 76.6763<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     69.5%      <hr>      <b>Brightness:</b> 304.85<br>     <b>FRP:</b> 2.25<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 12<br>     <b>OSM Distance:</b> 0.2947445816340706 km      </div>     </div>`)[0];
+                popup_151ec7f5febd9dad3a4f74e0e242b811.setContent(html_94eef6667a9d9f320682ed268c7f6d56);
+            
+        
+
+        circle_marker_4a8e4afc22b568a41b2b2dbcdc1c560e.bindPopup(popup_151ec7f5febd9dad3a4f74e0e242b811)
+        ;
+
+        
+    
+    
+            circle_marker_4a8e4afc22b568a41b2b2dbcdc1c560e.bindTooltip(
+                `<div>
+                     Hotspot 40 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5edfff4e47c9f9fdc46c79994907e6a6 = L.circleMarker(
+                [15.17356, 76.78545],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_eeb6059dc24b269b5d1a58f01f752b57 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_46c0f161de033041db39193a37eb5d95 = $(`<div id="html_46c0f161de033041db39193a37eb5d95" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 41<br>     <b>Latitude:</b> 15.17356<br>     <b>Longitude:</b> 76.78545<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     71.0%      <hr>      <b>Brightness:</b> 303.36<br>     <b>FRP:</b> 0.74<br>     <b>Land Cover:</b> Bare / sparse vegetation<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_eeb6059dc24b269b5d1a58f01f752b57.setContent(html_46c0f161de033041db39193a37eb5d95);
+            
+        
+
+        circle_marker_5edfff4e47c9f9fdc46c79994907e6a6.bindPopup(popup_eeb6059dc24b269b5d1a58f01f752b57)
+        ;
+
+        
+    
+    
+            circle_marker_5edfff4e47c9f9fdc46c79994907e6a6.bindTooltip(
+                `<div>
+                     Hotspot 41 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1e1616566f279294b617ea3fea227bf = L.circleMarker(
+                [15.17753, 77.1048],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_338c85e511724f74e5da14f03fbdf390 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f863f01101910e24680ee9e33593ceaf = $(`<div id="html_f863f01101910e24680ee9e33593ceaf" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 45<br>     <b>Latitude:</b> 15.17753<br>     <b>Longitude:</b> 77.1048<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     60.5%      <hr>      <b>Brightness:</b> 302.12<br>     <b>FRP:</b> 1.65<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_338c85e511724f74e5da14f03fbdf390.setContent(html_f863f01101910e24680ee9e33593ceaf);
+            
+        
+
+        circle_marker_c1e1616566f279294b617ea3fea227bf.bindPopup(popup_338c85e511724f74e5da14f03fbdf390)
+        ;
+
+        
+    
+    
+            circle_marker_c1e1616566f279294b617ea3fea227bf.bindTooltip(
+                `<div>
+                     Hotspot 45 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f391ed13ad9b91e96fcf02f60abf09b = L.circleMarker(
+                [15.36418, 76.30761],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_875c596a0568ef7139100c13d68f0238 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_15a87e92780abc347695745025ae32c3 = $(`<div id="html_15a87e92780abc347695745025ae32c3" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 46<br>     <b>Latitude:</b> 15.36418<br>     <b>Longitude:</b> 76.30761<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     76.5%      <hr>      <b>Brightness:</b> 302.16<br>     <b>FRP:</b> 0.47<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 2<br>     <b>OSM Distance:</b> 0.1538633799696427 km      </div>     </div>`)[0];
+                popup_875c596a0568ef7139100c13d68f0238.setContent(html_15a87e92780abc347695745025ae32c3);
+            
+        
+
+        circle_marker_8f391ed13ad9b91e96fcf02f60abf09b.bindPopup(popup_875c596a0568ef7139100c13d68f0238)
+        ;
+
+        
+    
+    
+            circle_marker_8f391ed13ad9b91e96fcf02f60abf09b.bindTooltip(
+                `<div>
+                     Hotspot 46 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_227a55f6a24d61a63c274f78afcde6fc = L.circleMarker(
+                [15.16473, 77.47666],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_190a59f7bde989591f97dfdea99f2af8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eb2079bf0b64ae023b0f04f30591133c = $(`<div id="html_eb2079bf0b64ae023b0f04f30591133c" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 47<br>     <b>Latitude:</b> 15.16473<br>     <b>Longitude:</b> 77.47666<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     98.5%      <hr>      <b>Brightness:</b> 341.18<br>     <b>FRP:</b> 13.0<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 1<br>     <b>OSM Distance:</b> 2.200918106168699 km      </div>     </div>`)[0];
+                popup_190a59f7bde989591f97dfdea99f2af8.setContent(html_eb2079bf0b64ae023b0f04f30591133c);
+            
+        
+
+        circle_marker_227a55f6a24d61a63c274f78afcde6fc.bindPopup(popup_190a59f7bde989591f97dfdea99f2af8)
+        ;
+
+        
+    
+    
+            circle_marker_227a55f6a24d61a63c274f78afcde6fc.bindTooltip(
+                `<div>
+                     Hotspot 47 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b18324e405819ea2243e461a05585dc7 = L.circleMarker(
+                [15.23728, 75.21181],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_c10dd499a59c9755051aed67a21cde72 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_72726f979a866a0f25e8783461dd8e7a = $(`<div id="html_72726f979a866a0f25e8783461dd8e7a" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 48<br>     <b>Latitude:</b> 15.23728<br>     <b>Longitude:</b> 75.21181<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     97.0%      <hr>      <b>Brightness:</b> 339.03<br>     <b>FRP:</b> 2.1<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_c10dd499a59c9755051aed67a21cde72.setContent(html_72726f979a866a0f25e8783461dd8e7a);
+            
+        
+
+        circle_marker_b18324e405819ea2243e461a05585dc7.bindPopup(popup_c10dd499a59c9755051aed67a21cde72)
+        ;
+
+        
+    
+    
+            circle_marker_b18324e405819ea2243e461a05585dc7.bindTooltip(
+                `<div>
+                     Hotspot 48 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea6fc6b47543179f87337ac563207b65 = L.circleMarker(
+                [15.25832, 75.12794],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_524d4a5aa40d1fb1708f63f3a8da3abd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a97879849513a430ad71b33a6d7c671d = $(`<div id="html_a97879849513a430ad71b33a6d7c671d" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 49<br>     <b>Latitude:</b> 15.25832<br>     <b>Longitude:</b> 75.12794<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     78.5%      <hr>      <b>Brightness:</b> 337.48<br>     <b>FRP:</b> 2.23<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_524d4a5aa40d1fb1708f63f3a8da3abd.setContent(html_a97879849513a430ad71b33a6d7c671d);
+            
+        
+
+        circle_marker_ea6fc6b47543179f87337ac563207b65.bindPopup(popup_524d4a5aa40d1fb1708f63f3a8da3abd)
+        ;
+
+        
+    
+    
+            circle_marker_ea6fc6b47543179f87337ac563207b65.bindTooltip(
+                `<div>
+                     Hotspot 49 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b61fa703eb113f38df311f7e9db8c67c = L.circleMarker(
+                [15.68853, 77.96468],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_283584d3d863a7e3454e1181b14bf349 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_424da6d23989e9b9bf6231ea4b80e962 = $(`<div id="html_424da6d23989e9b9bf6231ea4b80e962" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 50<br>     <b>Latitude:</b> 15.68853<br>     <b>Longitude:</b> 77.96468<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 343.01<br>     <b>FRP:</b> 8.71<br>     <b>Land Cover:</b> Grassland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_283584d3d863a7e3454e1181b14bf349.setContent(html_424da6d23989e9b9bf6231ea4b80e962);
+            
+        
+
+        circle_marker_b61fa703eb113f38df311f7e9db8c67c.bindPopup(popup_283584d3d863a7e3454e1181b14bf349)
+        ;
+
+        
+    
+    
+            circle_marker_b61fa703eb113f38df311f7e9db8c67c.bindTooltip(
+                `<div>
+                     Hotspot 50 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_911cbb2e2c5242fa96efadcd57631dcc = L.circleMarker(
+                [15.48376, 75.66547],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_dc04f9fd04762399e87ee648c226f78e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e6f2a5ec87d10c69a904940c7dc856b3 = $(`<div id="html_e6f2a5ec87d10c69a904940c7dc856b3" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 51<br>     <b>Latitude:</b> 15.48376<br>     <b>Longitude:</b> 75.66547<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 340.78<br>     <b>FRP:</b> 8.58<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_dc04f9fd04762399e87ee648c226f78e.setContent(html_e6f2a5ec87d10c69a904940c7dc856b3);
+            
+        
+
+        circle_marker_911cbb2e2c5242fa96efadcd57631dcc.bindPopup(popup_dc04f9fd04762399e87ee648c226f78e)
+        ;
+
+        
+    
+    
+            circle_marker_911cbb2e2c5242fa96efadcd57631dcc.bindTooltip(
+                `<div>
+                     Hotspot 51 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d812b6bb7c3a206b9bd8499e44295f1 = L.circleMarker(
+                [15.41398, 75.10604],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_9485b4d43a298ae698fef2789893599e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_63994d9d270ef5dd4c69d52905814531 = $(`<div id="html_63994d9d270ef5dd4c69d52905814531" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 52<br>     <b>Latitude:</b> 15.41398<br>     <b>Longitude:</b> 75.10604<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 336.47<br>     <b>FRP:</b> 2.36<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 1<br>     <b>OSM Distance:</b> 0.5164980294663997 km      </div>     </div>`)[0];
+                popup_9485b4d43a298ae698fef2789893599e.setContent(html_63994d9d270ef5dd4c69d52905814531);
+            
+        
+
+        circle_marker_7d812b6bb7c3a206b9bd8499e44295f1.bindPopup(popup_9485b4d43a298ae698fef2789893599e)
+        ;
+
+        
+    
+    
+            circle_marker_7d812b6bb7c3a206b9bd8499e44295f1.bindTooltip(
+                `<div>
+                     Hotspot 52 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6bd2e2eaaa1231a8ada584ff09dbcfce = L.circleMarker(
+                [17.75496, 75.41422],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_bfbbbbf8ad3897f6eb0bb356a772007a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a43952ab7f0a371c5b5b1e017eafa398 = $(`<div id="html_a43952ab7f0a371c5b5b1e017eafa398" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 53<br>     <b>Latitude:</b> 17.75496<br>     <b>Longitude:</b> 75.41422<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 342.69<br>     <b>FRP:</b> 7.8<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_bfbbbbf8ad3897f6eb0bb356a772007a.setContent(html_a43952ab7f0a371c5b5b1e017eafa398);
+            
+        
+
+        circle_marker_6bd2e2eaaa1231a8ada584ff09dbcfce.bindPopup(popup_bfbbbbf8ad3897f6eb0bb356a772007a)
+        ;
+
+        
+    
+    
+            circle_marker_6bd2e2eaaa1231a8ada584ff09dbcfce.bindTooltip(
+                `<div>
+                     Hotspot 53 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8be4d02ecb83bd822c78c88273414a55 = L.circleMarker(
+                [17.36981, 77.44453],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_4cfe3235baeeeca990020b31fcea8c9f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_15f2542bd8c6c7f05c3daff332e33804 = $(`<div id="html_15f2542bd8c6c7f05c3daff332e33804" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 54<br>     <b>Latitude:</b> 17.36981<br>     <b>Longitude:</b> 77.44453<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     71.5%      <hr>      <b>Brightness:</b> 304.85<br>     <b>FRP:</b> 0.74<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_4cfe3235baeeeca990020b31fcea8c9f.setContent(html_15f2542bd8c6c7f05c3daff332e33804);
+            
+        
+
+        circle_marker_8be4d02ecb83bd822c78c88273414a55.bindPopup(popup_4cfe3235baeeeca990020b31fcea8c9f)
+        ;
+
+        
+    
+    
+            circle_marker_8be4d02ecb83bd822c78c88273414a55.bindTooltip(
+                `<div>
+                     Hotspot 54 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_195b7d094c33cb20bb8b6e0576d30289 = L.circleMarker(
+                [17.14156, 77.18441],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_1acc41d06779862bcf4d916a8520bc72 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ef9968baccfe46f99867eacd674cd9d4 = $(`<div id="html_ef9968baccfe46f99867eacd674cd9d4" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 55<br>     <b>Latitude:</b> 17.14156<br>     <b>Longitude:</b> 77.18441<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     72.0%      <hr>      <b>Brightness:</b> 308.25<br>     <b>FRP:</b> 1.55<br>     <b>Land Cover:</b> Built-up<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 3<br>     <b>OSM Distance:</b> 0.069 km      </div>     </div>`)[0];
+                popup_1acc41d06779862bcf4d916a8520bc72.setContent(html_ef9968baccfe46f99867eacd674cd9d4);
+            
+        
+
+        circle_marker_195b7d094c33cb20bb8b6e0576d30289.bindPopup(popup_1acc41d06779862bcf4d916a8520bc72)
+        ;
+
+        
+    
+    
+            circle_marker_195b7d094c33cb20bb8b6e0576d30289.bindTooltip(
+                `<div>
+                     Hotspot 55 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_21b0f6fe5d1cbeb5179474c0d8f8710e = L.circleMarker(
+                [15.18322, 76.64294],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_a5898367d6bf3e82d3185e03d20dd9fe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_21b06498158f8013476a7d3865da4cff = $(`<div id="html_21b06498158f8013476a7d3865da4cff" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 57<br>     <b>Latitude:</b> 15.18322<br>     <b>Longitude:</b> 76.64294<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     81.5%      <hr>      <b>Brightness:</b> 340.89<br>     <b>FRP:</b> 6.02<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_a5898367d6bf3e82d3185e03d20dd9fe.setContent(html_21b06498158f8013476a7d3865da4cff);
+            
+        
+
+        circle_marker_21b0f6fe5d1cbeb5179474c0d8f8710e.bindPopup(popup_a5898367d6bf3e82d3185e03d20dd9fe)
+        ;
+
+        
+    
+    
+            circle_marker_21b0f6fe5d1cbeb5179474c0d8f8710e.bindTooltip(
+                `<div>
+                     Hotspot 57 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_becf51c91ec1ce11f93f13d1afa59047 = L.circleMarker(
+                [15.24926, 75.19452],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_c52c18861dad3d4327330733589f60e9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2c9923273ecc525f862d22847c80e283 = $(`<div id="html_2c9923273ecc525f862d22847c80e283" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 58<br>     <b>Latitude:</b> 15.24926<br>     <b>Longitude:</b> 75.19452<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 330.95<br>     <b>FRP:</b> 3.49<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_c52c18861dad3d4327330733589f60e9.setContent(html_2c9923273ecc525f862d22847c80e283);
+            
+        
+
+        circle_marker_becf51c91ec1ce11f93f13d1afa59047.bindPopup(popup_c52c18861dad3d4327330733589f60e9)
+        ;
+
+        
+    
+    
+            circle_marker_becf51c91ec1ce11f93f13d1afa59047.bindTooltip(
+                `<div>
+                     Hotspot 58 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a245945b38d95c96b4c3335f5a82a67 = L.circleMarker(
+                [15.24818, 75.19145],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_25d7cb8a680a29d420ab1f2fc5a197d7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_217846bd77330158e92acc6de9e36a9f = $(`<div id="html_217846bd77330158e92acc6de9e36a9f" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 59<br>     <b>Latitude:</b> 15.24818<br>     <b>Longitude:</b> 75.19145<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     99.0%      <hr>      <b>Brightness:</b> 332.29<br>     <b>FRP:</b> 3.02<br>     <b>Land Cover:</b> Cropland<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> no_industrial_osm_found<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_25d7cb8a680a29d420ab1f2fc5a197d7.setContent(html_217846bd77330158e92acc6de9e36a9f);
+            
+        
+
+        circle_marker_2a245945b38d95c96b4c3335f5a82a67.bindPopup(popup_25d7cb8a680a29d420ab1f2fc5a197d7)
+        ;
+
+        
+    
+    
+            circle_marker_2a245945b38d95c96b4c3335f5a82a67.bindTooltip(
+                `<div>
+                     Hotspot 59 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3a7a558b793ec7bcc9edbe2f204f3c7 = L.circleMarker(
+                [16.5696, 75.22845],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_1180516eca10301b529d8a63751a778f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_de009d3654fbce094f55d2f0836d7fb6 = $(`<div id="html_de009d3654fbce094f55d2f0836d7fb6" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 60<br>     <b>Latitude:</b> 16.5696<br>     <b>Longitude:</b> 75.22845<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 334.66<br>     <b>FRP:</b> 16.85<br>     <b>Land Cover:</b> Grassland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_1180516eca10301b529d8a63751a778f.setContent(html_de009d3654fbce094f55d2f0836d7fb6);
+            
+        
+
+        circle_marker_f3a7a558b793ec7bcc9edbe2f204f3c7.bindPopup(popup_1180516eca10301b529d8a63751a778f)
+        ;
+
+        
+    
+    
+            circle_marker_f3a7a558b793ec7bcc9edbe2f204f3c7.bindTooltip(
+                `<div>
+                     Hotspot 60 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0e4cf2413c153bd2f3134da27913d34 = L.circleMarker(
+                [17.58362, 75.70586],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38);
+        
+    
+        var popup_78efe597e89511ae26d619ea48434c25 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_06e04c226633b1fd99145cbffb79ee5b = $(`<div id="html_06e04c226633b1fd99145cbffb79ee5b" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 61<br>     <b>Latitude:</b> 17.58362<br>     <b>Longitude:</b> 75.70586<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Agricultural     </span>      <br>      <b>Model Probability:</b>     100.0%      <hr>      <b>Brightness:</b> 333.38<br>     <b>FRP:</b> 6.18<br>     <b>Land Cover:</b> Grassland<br>      <br>      <b>Detections:</b> 1<br>     <b>Active Days:</b> 1<br>     <b>Persistent:</b> 0<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_78efe597e89511ae26d619ea48434c25.setContent(html_06e04c226633b1fd99145cbffb79ee5b);
+            
+        
+
+        circle_marker_b0e4cf2413c153bd2f3134da27913d34.bindPopup(popup_78efe597e89511ae26d619ea48434c25)
+        ;
+
+        
+    
+    
+            circle_marker_b0e4cf2413c153bd2f3134da27913d34.bindTooltip(
+                `<div>
+                     Hotspot 61 - Agricultural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var feature_group_d83f8f02ddbf060b56a1b422f5213a90 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_594009eceda0b37c20e3dd2fe3663cc8 = L.circleMarker(
+                [15.33521, 76.28432],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d83f8f02ddbf060b56a1b422f5213a90);
+        
+    
+        var popup_53d2e814f8fa220dd1a19add17df5fc8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1fb6b5f3cb622f9aaa90e26712a01b52 = $(`<div id="html_1fb6b5f3cb622f9aaa90e26712a01b52" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 9<br>     <b>Latitude:</b> 15.33521<br>     <b>Longitude:</b> 76.28432<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Natural     </span>      <br>      <b>Model Probability:</b>     91.5%      <hr>      <b>Brightness:</b> 305.33<br>     <b>FRP:</b> 0.93<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 4<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_53d2e814f8fa220dd1a19add17df5fc8.setContent(html_1fb6b5f3cb622f9aaa90e26712a01b52);
+            
+        
+
+        circle_marker_594009eceda0b37c20e3dd2fe3663cc8.bindPopup(popup_53d2e814f8fa220dd1a19add17df5fc8)
+        ;
+
+        
+    
+    
+            circle_marker_594009eceda0b37c20e3dd2fe3663cc8.bindTooltip(
+                `<div>
+                     Hotspot 9 - Natural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65ae583a0ee7c5560016c32a6e1ffd1d = L.circleMarker(
+                [15.17464, 76.69185],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d83f8f02ddbf060b56a1b422f5213a90);
+        
+    
+        var popup_ea4861ac0c71e45a0c475c853ad0ed67 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f45e764e1cbf2a3f0a4567e2e28aaf56 = $(`<div id="html_f45e764e1cbf2a3f0a4567e2e28aaf56" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 10<br>     <b>Latitude:</b> 15.17464<br>     <b>Longitude:</b> 76.69185<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Natural     </span>      <br>      <b>Model Probability:</b>     63.0%      <hr>      <b>Brightness:</b> 304.65<br>     <b>FRP:</b> 1.61<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 2<br>     <b>Active Days:</b> 2<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 1<br>     <b>OSM Distance:</b> 2.4087479130426885 km      </div>     </div>`)[0];
+                popup_ea4861ac0c71e45a0c475c853ad0ed67.setContent(html_f45e764e1cbf2a3f0a4567e2e28aaf56);
+            
+        
+
+        circle_marker_65ae583a0ee7c5560016c32a6e1ffd1d.bindPopup(popup_ea4861ac0c71e45a0c475c853ad0ed67)
+        ;
+
+        
+    
+    
+            circle_marker_65ae583a0ee7c5560016c32a6e1ffd1d.bindTooltip(
+                `<div>
+                     Hotspot 10 - Natural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28f69bba4092aefdc6b1f9e6eca05ebb = L.circleMarker(
+                [15.1802, 76.65571],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d83f8f02ddbf060b56a1b422f5213a90);
+        
+    
+        var popup_1ee46d07df72bfb9602113e12097d38d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_10506643616701fd31b32007d8c5fb75 = $(`<div id="html_10506643616701fd31b32007d8c5fb75" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 19<br>     <b>Latitude:</b> 15.1802<br>     <b>Longitude:</b> 76.65571<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Natural     </span>      <br>      <b>Model Probability:</b>     98.0%      <hr>      <b>Brightness:</b> 303.39<br>     <b>FRP:</b> 0.72<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_1ee46d07df72bfb9602113e12097d38d.setContent(html_10506643616701fd31b32007d8c5fb75);
+            
+        
+
+        circle_marker_28f69bba4092aefdc6b1f9e6eca05ebb.bindPopup(popup_1ee46d07df72bfb9602113e12097d38d)
+        ;
+
+        
+    
+    
+            circle_marker_28f69bba4092aefdc6b1f9e6eca05ebb.bindTooltip(
+                `<div>
+                     Hotspot 19 - Natural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d38d14b52e1537016e3cd9354271ef6 = L.circleMarker(
+                [15.1749, 76.65414],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d83f8f02ddbf060b56a1b422f5213a90);
+        
+    
+        var popup_4c8fbbdb45c2b3ab8eda1bc8357d9080 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_87b5b0e6036b913538d60b076be1dc6f = $(`<div id="html_87b5b0e6036b913538d60b076be1dc6f" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 23<br>     <b>Latitude:</b> 15.1749<br>     <b>Longitude:</b> 76.65414<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Natural     </span>      <br>      <b>Model Probability:</b>     92.5%      <hr>      <b>Brightness:</b> 301.32<br>     <b>FRP:</b> 0.45<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> industrial_osm_found<br>     <b>OSM Features:</b> 18<br>     <b>OSM Distance:</b> 0.044650725421703 km      </div>     </div>`)[0];
+                popup_4c8fbbdb45c2b3ab8eda1bc8357d9080.setContent(html_87b5b0e6036b913538d60b076be1dc6f);
+            
+        
+
+        circle_marker_6d38d14b52e1537016e3cd9354271ef6.bindPopup(popup_4c8fbbdb45c2b3ab8eda1bc8357d9080)
+        ;
+
+        
+    
+    
+            circle_marker_6d38d14b52e1537016e3cd9354271ef6.bindTooltip(
+                `<div>
+                     Hotspot 23 - Natural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa178c934a1ea3117344e62a2deb33a2 = L.circleMarker(
+                [15.17325, 76.65584],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_d83f8f02ddbf060b56a1b422f5213a90);
+        
+    
+        var popup_0da942099d29ae0104128d69ea308de4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0e3ff930fce071544a4f03f0d7de922c = $(`<div id="html_0e3ff930fce071544a4f03f0d7de922c" style="width: 100.0%; height: 100.0%;">     <div style="width:320px">      <h4>🔥 AI Thermal Event Classification</h4>      <hr>      <b>Hotspot ID:</b> 35<br>     <b>Latitude:</b> 15.17325<br>     <b>Longitude:</b> 76.65584<br>      <br>      <b>AI Prediction:</b>     <span style="font-weight:bold">     Natural     </span>      <br>      <b>Model Probability:</b>     98.5%      <hr>      <b>Brightness:</b> 304.56<br>     <b>FRP:</b> 1.44<br>     <b>Land Cover:</b> Tree cover<br>      <br>      <b>Detections:</b> 15<br>     <b>Active Days:</b> 4<br>     <b>Persistent:</b> 1<br>      <br>      <b>OSM Context:</b> osm_unavailable<br>     <b>OSM Features:</b> 0<br>     <b>OSM Distance:</b> nan km      </div>     </div>`)[0];
+                popup_0da942099d29ae0104128d69ea308de4.setContent(html_0e3ff930fce071544a4f03f0d7de922c);
+            
+        
+
+        circle_marker_aa178c934a1ea3117344e62a2deb33a2.bindPopup(popup_0da942099d29ae0104128d69ea308de4)
+        ;
+
+        
+    
+    
+            circle_marker_aa178c934a1ea3117344e62a2deb33a2.bindTooltip(
+                `<div>
+                     Hotspot 35 - Natural
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_d83f8f02ddbf060b56a1b422f5213a90.addTo(map_0721c33c53eb308a736ae231769c1eb3);
+        
+    
+            var layer_control_64df79861976909f8dbfc17f0421d8d1_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8ff23801fc36ab362656aea6037cceae,
+                    "Satellite Imagery" : tile_layer_000f10941a3e00befdcf3b4c257a4e86,
+                    "OpenStreetMap" : tile_layer_066a7bce93fad5d891b43603ee399125,
+                },
+                overlays :  {
+                    "\ud83d\udd34 AI: Industrial" : feature_group_f33eac487b5f0dd53b96efbc20ba2c70,
+                    "\ud83d\udfe0 AI: Agricultural" : feature_group_1a0b2e5ea193243c0c8e38ac2e4b6c38,
+                    "\ud83d\udfe2 AI: Natural" : feature_group_d83f8f02ddbf060b56a1b422f5213a90,
+                },
+            };
+            let layer_control_64df79861976909f8dbfc17f0421d8d1 = L.control.layers(
+                layer_control_64df79861976909f8dbfc17f0421d8d1_layers.base_layers,
+                layer_control_64df79861976909f8dbfc17f0421d8d1_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_0721c33c53eb308a736ae231769c1eb3);
+
+        
+</script>
+</html>

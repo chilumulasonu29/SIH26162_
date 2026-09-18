@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f2cb9382757c6d096ee67293eec7d18c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f2cb9382757c6d096ee67293eec7d18c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f2cb9382757c6d096ee67293eec7d18c = L.map(
+                "map_f2cb9382757c6d096ee67293eec7d18c",
+                {
+                    center: [15.530043387096775, 76.38617999999998],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e9a2ed7cbba59cbdbaa324462a033f9f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e9a2ed7cbba59cbdbaa324462a033f9f.addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+            var tile_layer_0caa797324295e5265d3a4dd8698bbdf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0caa797324295e5265d3a4dd8698bbdf.addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+            var tile_layer_b4eb8a17e4a4a95f180528d1c9345396 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b4eb8a17e4a4a95f180528d1c9345396.addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+            var circle_marker_b32a1bdb430a48a39cfaa7fee7d33bd4 = L.circleMarker(
+                [15.17353, 76.65462],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_33711596493fbc7744935bbc007a5538 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8ea2e421986433209cc37d48c774a288 = $(`<div id="html_8ea2e421986433209cc37d48c774a288" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     13<br>      <b>Latitude:</b>     15.17353<br>      <b>Longitude:</b>     76.65462<br><br>      <b>Brightness:</b>     312.41<br>      <b>FRP:</b>     1.95<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.066<br>      <b>OSM type:</b>     cooling<br><br>      <b>Review priority:</b>     11<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_33711596493fbc7744935bbc007a5538.setContent(html_8ea2e421986433209cc37d48c774a288);
+            
+        
+
+        circle_marker_b32a1bdb430a48a39cfaa7fee7d33bd4.bindPopup(popup_33711596493fbc7744935bbc007a5538)
+        ;
+
+        
+    
+    
+            circle_marker_b32a1bdb430a48a39cfaa7fee7d33bd4.bindTooltip(
+                `<div>
+                     Hotspot 13 | Priority 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b7e894441ce02cdf96cc480215844a8 = L.circleMarker(
+                [15.16912, 76.37991],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_9a31c74aef40e46457e5267dd2fff8d3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3967fc2359cb44e9e4be06d746371112 = $(`<div id="html_3967fc2359cb44e9e4be06d746371112" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     8<br>      <b>Latitude:</b>     15.16912<br>      <b>Longitude:</b>     76.37991<br><br>      <b>Brightness:</b>     307.17<br>      <b>FRP:</b>     2.33<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.066<br>      <b>OSM type:</b>     industrial<br><br>      <b>Review priority:</b>     11<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_9a31c74aef40e46457e5267dd2fff8d3.setContent(html_3967fc2359cb44e9e4be06d746371112);
+            
+        
+
+        circle_marker_5b7e894441ce02cdf96cc480215844a8.bindPopup(popup_9a31c74aef40e46457e5267dd2fff8d3)
+        ;
+
+        
+    
+    
+            circle_marker_5b7e894441ce02cdf96cc480215844a8.bindTooltip(
+                `<div>
+                     Hotspot 8 | Priority 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc99a2f528f3d78a6e2fe740567a0d42 = L.circleMarker(
+                [15.16814, 76.38044],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_7cd73ae0ff4f2a3c83c5e3a0cd18df14 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6c03f1cb36b810323c93e1a8d718ab8c = $(`<div id="html_6c03f1cb36b810323c93e1a8d718ab8c" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     26<br>      <b>Latitude:</b>     15.16814<br>      <b>Longitude:</b>     76.38044<br><br>      <b>Brightness:</b>     303.41<br>      <b>FRP:</b>     1.56<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.06<br>      <b>OSM type:</b>     industrial<br><br>      <b>Review priority:</b>     11<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_7cd73ae0ff4f2a3c83c5e3a0cd18df14.setContent(html_6c03f1cb36b810323c93e1a8d718ab8c);
+            
+        
+
+        circle_marker_fc99a2f528f3d78a6e2fe740567a0d42.bindPopup(popup_7cd73ae0ff4f2a3c83c5e3a0cd18df14)
+        ;
+
+        
+    
+    
+            circle_marker_fc99a2f528f3d78a6e2fe740567a0d42.bindTooltip(
+                `<div>
+                     Hotspot 26 | Priority 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d64f9519b5fd28932d3452acba5976bf = L.circleMarker(
+                [15.18691, 76.65974],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_692ad31d011ac558c711857d8ee42305 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1d48e3ef5aad23b554c482f8fa60ef36 = $(`<div id="html_1d48e3ef5aad23b554c482f8fa60ef36" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     20<br>      <b>Latitude:</b>     15.18691<br>      <b>Longitude:</b>     76.65974<br><br>      <b>Brightness:</b>     296.41<br>      <b>FRP:</b>     0.71<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.028<br>      <b>OSM type:</b>     cooling<br><br>      <b>Review priority:</b>     11<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_692ad31d011ac558c711857d8ee42305.setContent(html_1d48e3ef5aad23b554c482f8fa60ef36);
+            
+        
+
+        circle_marker_d64f9519b5fd28932d3452acba5976bf.bindPopup(popup_692ad31d011ac558c711857d8ee42305)
+        ;
+
+        
+    
+    
+            circle_marker_d64f9519b5fd28932d3452acba5976bf.bindTooltip(
+                `<div>
+                     Hotspot 20 | Priority 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43876a60942171fd5d774363b95c104c = L.circleMarker(
+                [15.33474, 76.28601],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_034cd0151b69c563abe66f6d537c28ec = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e2f8e9b293f3fd4bd6f61d44dc1f08bd = $(`<div id="html_e2f8e9b293f3fd4bd6f61d44dc1f08bd" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     42<br>      <b>Latitude:</b>     15.33474<br>      <b>Longitude:</b>     76.28601<br><br>      <b>Brightness:</b>     302.94<br>      <b>FRP:</b>     0.81<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     4<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.357<br>      <b>OSM type:</b>     industrial<br><br>      <b>Review priority:</b>     11<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_034cd0151b69c563abe66f6d537c28ec.setContent(html_e2f8e9b293f3fd4bd6f61d44dc1f08bd);
+            
+        
+
+        circle_marker_43876a60942171fd5d774363b95c104c.bindPopup(popup_034cd0151b69c563abe66f6d537c28ec)
+        ;
+
+        
+    
+    
+            circle_marker_43876a60942171fd5d774363b95c104c.bindTooltip(
+                `<div>
+                     Hotspot 42 | Priority 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_958e9ef4e23452443ef91ae8a07f54fc = L.circleMarker(
+                [15.17247, 76.37917],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_1c34163f662bf5bf5a2c4531addc76c3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1179eea53418a666a813efbf6af3336e = $(`<div id="html_1179eea53418a666a813efbf6af3336e" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     15<br>      <b>Latitude:</b>     15.17247<br>      <b>Longitude:</b>     76.37917<br><br>      <b>Brightness:</b>     304.41<br>      <b>FRP:</b>     0.92<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     6<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_1c34163f662bf5bf5a2c4531addc76c3.setContent(html_1179eea53418a666a813efbf6af3336e);
+            
+        
+
+        circle_marker_958e9ef4e23452443ef91ae8a07f54fc.bindPopup(popup_1c34163f662bf5bf5a2c4531addc76c3)
+        ;
+
+        
+    
+    
+            circle_marker_958e9ef4e23452443ef91ae8a07f54fc.bindTooltip(
+                `<div>
+                     Hotspot 15 | Priority 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3735e8f102ebdcbf9ab1da6b5b017167 = L.circleMarker(
+                [15.17878, 76.65715],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_2ac365a5f625779b982dfe961da580da = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0c078c87a4bf09232d353877276e1a5a = $(`<div id="html_0c078c87a4bf09232d353877276e1a5a" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     34<br>      <b>Latitude:</b>     15.17878<br>      <b>Longitude:</b>     76.65715<br><br>      <b>Brightness:</b>     315.21<br>      <b>FRP:</b>     2.73<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     6<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_2ac365a5f625779b982dfe961da580da.setContent(html_0c078c87a4bf09232d353877276e1a5a);
+            
+        
+
+        circle_marker_3735e8f102ebdcbf9ab1da6b5b017167.bindPopup(popup_2ac365a5f625779b982dfe961da580da)
+        ;
+
+        
+    
+    
+            circle_marker_3735e8f102ebdcbf9ab1da6b5b017167.bindTooltip(
+                `<div>
+                     Hotspot 34 | Priority 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3566949decb98335fd0cb1bbf648b86e = L.circleMarker(
+                [17.14156, 77.18441],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_b0ab018a87a36d752df9e895dd8e468e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c36647fedb7057e8bfc5365fd101200d = $(`<div id="html_c36647fedb7057e8bfc5365fd101200d" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     55<br>      <b>Latitude:</b>     17.14156<br>      <b>Longitude:</b>     77.18441<br><br>      <b>Brightness:</b>     308.25<br>      <b>FRP:</b>     1.55<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     industrial_osm_found<br>      <b>OSM distance:</b>     0.069<br>      <b>OSM type:</b>     industrial<br><br>      <b>Review priority:</b>     6<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_b0ab018a87a36d752df9e895dd8e468e.setContent(html_c36647fedb7057e8bfc5365fd101200d);
+            
+        
+
+        circle_marker_3566949decb98335fd0cb1bbf648b86e.bindPopup(popup_b0ab018a87a36d752df9e895dd8e468e)
+        ;
+
+        
+    
+    
+            circle_marker_3566949decb98335fd0cb1bbf648b86e.bindTooltip(
+                `<div>
+                     Hotspot 55 | Priority 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_953b6030c8ee6040863059da5b0b9b6f = L.circleMarker(
+                [15.17631, 76.65878],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_8c6df4c9a3be761b5956619c64709863 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f65f77a2f83d7b4014468a01d4ba7ad4 = $(`<div id="html_f65f77a2f83d7b4014468a01d4ba7ad4" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     12<br>      <b>Latitude:</b>     15.17631<br>      <b>Longitude:</b>     76.65878<br><br>      <b>Brightness:</b>     318.99<br>      <b>FRP:</b>     1.95<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_8c6df4c9a3be761b5956619c64709863.setContent(html_f65f77a2f83d7b4014468a01d4ba7ad4);
+            
+        
+
+        circle_marker_953b6030c8ee6040863059da5b0b9b6f.bindPopup(popup_8c6df4c9a3be761b5956619c64709863)
+        ;
+
+        
+    
+    
+            circle_marker_953b6030c8ee6040863059da5b0b9b6f.bindTooltip(
+                `<div>
+                     Hotspot 12 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9645980075fc2940b308d560b7a739d = L.circleMarker(
+                [15.1802, 76.65571],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_c0f689014fa59116f91ddd4ee1c777ee = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7b62431c9e7f9c83c1148ed342497f07 = $(`<div id="html_7b62431c9e7f9c83c1148ed342497f07" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     19<br>      <b>Latitude:</b>     15.1802<br>      <b>Longitude:</b>     76.65571<br><br>      <b>Brightness:</b>     303.39<br>      <b>FRP:</b>     0.72<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_c0f689014fa59116f91ddd4ee1c777ee.setContent(html_7b62431c9e7f9c83c1148ed342497f07);
+            
+        
+
+        circle_marker_e9645980075fc2940b308d560b7a739d.bindPopup(popup_c0f689014fa59116f91ddd4ee1c777ee)
+        ;
+
+        
+    
+    
+            circle_marker_e9645980075fc2940b308d560b7a739d.bindTooltip(
+                `<div>
+                     Hotspot 19 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2e7c93ec1407e9b841b780f2e75d89c = L.circleMarker(
+                [15.22512, 76.76299],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_095e4f3fdd67198a43ae89726763eba5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_afb8c86bd7e4bb5f2d240d2ca388d2ff = $(`<div id="html_afb8c86bd7e4bb5f2d240d2ca388d2ff" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     18<br>      <b>Latitude:</b>     15.22512<br>      <b>Longitude:</b>     76.76299<br><br>      <b>Brightness:</b>     300.51<br>      <b>FRP:</b>     0.96<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_095e4f3fdd67198a43ae89726763eba5.setContent(html_afb8c86bd7e4bb5f2d240d2ca388d2ff);
+            
+        
+
+        circle_marker_a2e7c93ec1407e9b841b780f2e75d89c.bindPopup(popup_095e4f3fdd67198a43ae89726763eba5)
+        ;
+
+        
+    
+    
+            circle_marker_a2e7c93ec1407e9b841b780f2e75d89c.bindTooltip(
+                `<div>
+                     Hotspot 18 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32f9ea46801a965283b81f6807806e78 = L.circleMarker(
+                [15.17381, 76.69381],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_2618087334126893d57ee8d8b81a4796 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a1fd37b93d1b73da6108460b188f3fec = $(`<div id="html_a1fd37b93d1b73da6108460b188f3fec" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     22<br>      <b>Latitude:</b>     15.17381<br>      <b>Longitude:</b>     76.69381<br><br>      <b>Brightness:</b>     295.21<br>      <b>FRP:</b>     0.23<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_2618087334126893d57ee8d8b81a4796.setContent(html_a1fd37b93d1b73da6108460b188f3fec);
+            
+        
+
+        circle_marker_32f9ea46801a965283b81f6807806e78.bindPopup(popup_2618087334126893d57ee8d8b81a4796)
+        ;
+
+        
+    
+    
+            circle_marker_32f9ea46801a965283b81f6807806e78.bindTooltip(
+                `<div>
+                     Hotspot 22 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00d429bcc534d083380c628e2add4ca4 = L.circleMarker(
+                [15.18168, 76.66698],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_f3d3aff3b8336a94b5e10cb68d41842b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_26f21e4530f820569b2616542e730a0c = $(`<div id="html_26f21e4530f820569b2616542e730a0c" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     21<br>      <b>Latitude:</b>     15.18168<br>      <b>Longitude:</b>     76.66698<br><br>      <b>Brightness:</b>     302.65<br>      <b>FRP:</b>     0.75<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_f3d3aff3b8336a94b5e10cb68d41842b.setContent(html_26f21e4530f820569b2616542e730a0c);
+            
+        
+
+        circle_marker_00d429bcc534d083380c628e2add4ca4.bindPopup(popup_f3d3aff3b8336a94b5e10cb68d41842b)
+        ;
+
+        
+    
+    
+            circle_marker_00d429bcc534d083380c628e2add4ca4.bindTooltip(
+                `<div>
+                     Hotspot 21 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_426aa8da8c54600203d65da084e4c8d9 = L.circleMarker(
+                [15.33521, 76.28432],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_a83de208a650b40265babbfee7908c0c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e864053ae7cc1fade284f3f449850d06 = $(`<div id="html_e864053ae7cc1fade284f3f449850d06" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     9<br>      <b>Latitude:</b>     15.33521<br>      <b>Longitude:</b>     76.28432<br><br>      <b>Brightness:</b>     305.33<br>      <b>FRP:</b>     0.93<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     4<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_a83de208a650b40265babbfee7908c0c.setContent(html_e864053ae7cc1fade284f3f449850d06);
+            
+        
+
+        circle_marker_426aa8da8c54600203d65da084e4c8d9.bindPopup(popup_a83de208a650b40265babbfee7908c0c)
+        ;
+
+        
+    
+    
+            circle_marker_426aa8da8c54600203d65da084e4c8d9.bindTooltip(
+                `<div>
+                     Hotspot 9 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ebadbf9b86a218d81706c9d927c6b4b = L.circleMarker(
+                [15.17293, 76.37693],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_a5245da77d3bbd7d79769e48e384af4e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ebe79b44da3fbe6d3e27c69b3191a8c1 = $(`<div id="html_ebe79b44da3fbe6d3e27c69b3191a8c1" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     25<br>      <b>Latitude:</b>     15.17293<br>      <b>Longitude:</b>     76.37693<br><br>      <b>Brightness:</b>     298.76<br>      <b>FRP:</b>     0.56<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_a5245da77d3bbd7d79769e48e384af4e.setContent(html_ebe79b44da3fbe6d3e27c69b3191a8c1);
+            
+        
+
+        circle_marker_0ebadbf9b86a218d81706c9d927c6b4b.bindPopup(popup_a5245da77d3bbd7d79769e48e384af4e)
+        ;
+
+        
+    
+    
+            circle_marker_0ebadbf9b86a218d81706c9d927c6b4b.bindTooltip(
+                `<div>
+                     Hotspot 25 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74ad2edae160339c8e6beb1020e95159 = L.circleMarker(
+                [15.17592, 76.65578],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_ca039063a28156f239bce7e8e0ac16c6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_06e6c058e7bec048db512a402c880584 = $(`<div id="html_06e6c058e7bec048db512a402c880584" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     27<br>      <b>Latitude:</b>     15.17592<br>      <b>Longitude:</b>     76.65578<br><br>      <b>Brightness:</b>     333.75<br>      <b>FRP:</b>     4.36<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_ca039063a28156f239bce7e8e0ac16c6.setContent(html_06e6c058e7bec048db512a402c880584);
+            
+        
+
+        circle_marker_74ad2edae160339c8e6beb1020e95159.bindPopup(popup_ca039063a28156f239bce7e8e0ac16c6)
+        ;
+
+        
+    
+    
+            circle_marker_74ad2edae160339c8e6beb1020e95159.bindTooltip(
+                `<div>
+                     Hotspot 27 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0005e58d04608f1807c8352fbf5148e9 = L.circleMarker(
+                [15.17437, 76.65804],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_f25e5cecea1c2c519436dc4c30cacf83 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6090fc2f441b885df21c811f3536d589 = $(`<div id="html_6090fc2f441b885df21c811f3536d589" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     24<br>      <b>Latitude:</b>     15.17437<br>      <b>Longitude:</b>     76.65804<br><br>      <b>Brightness:</b>     298.29<br>      <b>FRP:</b>     0.45<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_f25e5cecea1c2c519436dc4c30cacf83.setContent(html_6090fc2f441b885df21c811f3536d589);
+            
+        
+
+        circle_marker_0005e58d04608f1807c8352fbf5148e9.bindPopup(popup_f25e5cecea1c2c519436dc4c30cacf83)
+        ;
+
+        
+    
+    
+            circle_marker_0005e58d04608f1807c8352fbf5148e9.bindTooltip(
+                `<div>
+                     Hotspot 24 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_280f9d50a261590876d6d2dfb0be135c = L.circleMarker(
+                [15.1749, 76.65414],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_08a681cdcddc90e15876e4d3bdb93977 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9f69d4008bf7c51360ec23d37237b9a2 = $(`<div id="html_9f69d4008bf7c51360ec23d37237b9a2" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     23<br>      <b>Latitude:</b>     15.1749<br>      <b>Longitude:</b>     76.65414<br><br>      <b>Brightness:</b>     301.32<br>      <b>FRP:</b>     0.45<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_08a681cdcddc90e15876e4d3bdb93977.setContent(html_9f69d4008bf7c51360ec23d37237b9a2);
+            
+        
+
+        circle_marker_280f9d50a261590876d6d2dfb0be135c.bindPopup(popup_08a681cdcddc90e15876e4d3bdb93977)
+        ;
+
+        
+    
+    
+            circle_marker_280f9d50a261590876d6d2dfb0be135c.bindTooltip(
+                `<div>
+                     Hotspot 23 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ed4fdfc4561ac72430061bc36ca9b90 = L.circleMarker(
+                [15.16912, 76.37862],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_32eb7027065d6a0eecf3533ce0201b97 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9ae4cc35cda2d28e942cab7ec388bcae = $(`<div id="html_9ae4cc35cda2d28e942cab7ec388bcae" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     16<br>      <b>Latitude:</b>     15.16912<br>      <b>Longitude:</b>     76.37862<br><br>      <b>Brightness:</b>     302.57<br>      <b>FRP:</b>     0.92<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_32eb7027065d6a0eecf3533ce0201b97.setContent(html_9ae4cc35cda2d28e942cab7ec388bcae);
+            
+        
+
+        circle_marker_4ed4fdfc4561ac72430061bc36ca9b90.bindPopup(popup_32eb7027065d6a0eecf3533ce0201b97)
+        ;
+
+        
+    
+    
+            circle_marker_4ed4fdfc4561ac72430061bc36ca9b90.bindTooltip(
+                `<div>
+                     Hotspot 16 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_182478b9fe1af1e5d756e63b6c3234d9 = L.circleMarker(
+                [15.17464, 76.69185],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_de3103f0ea28ea8d3a8339dcee8e280d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0186f969ab7009e5c9c139b44db87a3b = $(`<div id="html_0186f969ab7009e5c9c139b44db87a3b" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     10<br>      <b>Latitude:</b>     15.17464<br>      <b>Longitude:</b>     76.69185<br><br>      <b>Brightness:</b>     304.65<br>      <b>FRP:</b>     1.61<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_de3103f0ea28ea8d3a8339dcee8e280d.setContent(html_0186f969ab7009e5c9c139b44db87a3b);
+            
+        
+
+        circle_marker_182478b9fe1af1e5d756e63b6c3234d9.bindPopup(popup_de3103f0ea28ea8d3a8339dcee8e280d)
+        ;
+
+        
+    
+    
+            circle_marker_182478b9fe1af1e5d756e63b6c3234d9.bindTooltip(
+                `<div>
+                     Hotspot 10 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30d89d83ae02551ae8a03f69acca986c = L.circleMarker(
+                [15.22531, 76.76296],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_820aad8294b443e2a54724571fb44cbc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6e69d227247a870e7bb689982ee585a0 = $(`<div id="html_6e69d227247a870e7bb689982ee585a0" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     4<br>      <b>Latitude:</b>     15.22531<br>      <b>Longitude:</b>     76.76296<br><br>      <b>Brightness:</b>     334.33<br>      <b>FRP:</b>     1.81<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_820aad8294b443e2a54724571fb44cbc.setContent(html_6e69d227247a870e7bb689982ee585a0);
+            
+        
+
+        circle_marker_30d89d83ae02551ae8a03f69acca986c.bindPopup(popup_820aad8294b443e2a54724571fb44cbc)
+        ;
+
+        
+    
+    
+            circle_marker_30d89d83ae02551ae8a03f69acca986c.bindTooltip(
+                `<div>
+                     Hotspot 4 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a0037cebdbd0c36dae4703927ece729 = L.circleMarker(
+                [15.17474, 76.65694],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_2eeffa17749d04efcc11e6a7af481bea = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d4e987fd8a668f08aa2e2873b5bcd716 = $(`<div id="html_d4e987fd8a668f08aa2e2873b5bcd716" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     56<br>      <b>Latitude:</b>     15.17474<br>      <b>Longitude:</b>     76.65694<br><br>      <b>Brightness:</b>     336.59<br>      <b>FRP:</b>     6.22<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_2eeffa17749d04efcc11e6a7af481bea.setContent(html_d4e987fd8a668f08aa2e2873b5bcd716);
+            
+        
+
+        circle_marker_9a0037cebdbd0c36dae4703927ece729.bindPopup(popup_2eeffa17749d04efcc11e6a7af481bea)
+        ;
+
+        
+    
+    
+            circle_marker_9a0037cebdbd0c36dae4703927ece729.bindTooltip(
+                `<div>
+                     Hotspot 56 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f1ab432313ce6e223324cfa11dc972ce = L.circleMarker(
+                [15.17325, 76.65584],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_6286ef82fe3007aa7b7bfbb5ec881b2e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0f05c1d20ed19e9e28f93778fdb10a28 = $(`<div id="html_0f05c1d20ed19e9e28f93778fdb10a28" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     35<br>      <b>Latitude:</b>     15.17325<br>      <b>Longitude:</b>     76.65584<br><br>      <b>Brightness:</b>     304.56<br>      <b>FRP:</b>     1.44<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_6286ef82fe3007aa7b7bfbb5ec881b2e.setContent(html_0f05c1d20ed19e9e28f93778fdb10a28);
+            
+        
+
+        circle_marker_f1ab432313ce6e223324cfa11dc972ce.bindPopup(popup_6286ef82fe3007aa7b7bfbb5ec881b2e)
+        ;
+
+        
+    
+    
+            circle_marker_f1ab432313ce6e223324cfa11dc972ce.bindTooltip(
+                `<div>
+                     Hotspot 35 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ce28a5f6b03371954841c552961723d = L.circleMarker(
+                [15.18274, 76.66614],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_f71c1835f60a54a2d017a5e1146d48e0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0cb24143ea7f53f511797455928e8720 = $(`<div id="html_0cb24143ea7f53f511797455928e8720" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     39<br>      <b>Latitude:</b>     15.18274<br>      <b>Longitude:</b>     76.66614<br><br>      <b>Brightness:</b>     305.28<br>      <b>FRP:</b>     1.96<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_f71c1835f60a54a2d017a5e1146d48e0.setContent(html_0cb24143ea7f53f511797455928e8720);
+            
+        
+
+        circle_marker_5ce28a5f6b03371954841c552961723d.bindPopup(popup_f71c1835f60a54a2d017a5e1146d48e0)
+        ;
+
+        
+    
+    
+            circle_marker_5ce28a5f6b03371954841c552961723d.bindTooltip(
+                `<div>
+                     Hotspot 39 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_327f25890fc4a6e926ac1d05e3298a92 = L.circleMarker(
+                [15.33622, 76.27875],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_8d2babf6680fc1ee46601f0d109c58c8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8d78ea97ce8dcdf7da766b96cd067ec3 = $(`<div id="html_8d78ea97ce8dcdf7da766b96cd067ec3" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     43<br>      <b>Latitude:</b>     15.33622<br>      <b>Longitude:</b>     76.27875<br><br>      <b>Brightness:</b>     309.54<br>      <b>FRP:</b>     0.9<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     4<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_8d2babf6680fc1ee46601f0d109c58c8.setContent(html_8d78ea97ce8dcdf7da766b96cd067ec3);
+            
+        
+
+        circle_marker_327f25890fc4a6e926ac1d05e3298a92.bindPopup(popup_8d2babf6680fc1ee46601f0d109c58c8)
+        ;
+
+        
+    
+    
+            circle_marker_327f25890fc4a6e926ac1d05e3298a92.bindTooltip(
+                `<div>
+                     Hotspot 43 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91fc7aa836c7ca9e6d1a1829c23dd213 = L.circleMarker(
+                [15.33695, 76.27518],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_215c43512deed4334f840ac5350e0fe9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e28cbc4fda5ea042f68bc53352c25b90 = $(`<div id="html_e28cbc4fda5ea042f68bc53352c25b90" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     44<br>      <b>Latitude:</b>     15.33695<br>      <b>Longitude:</b>     76.27518<br><br>      <b>Brightness:</b>     303.69<br>      <b>FRP:</b>     0.9<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     4<br>      <b>Active days:</b>     2<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_215c43512deed4334f840ac5350e0fe9.setContent(html_e28cbc4fda5ea042f68bc53352c25b90);
+            
+        
+
+        circle_marker_91fc7aa836c7ca9e6d1a1829c23dd213.bindPopup(popup_215c43512deed4334f840ac5350e0fe9)
+        ;
+
+        
+    
+    
+            circle_marker_91fc7aa836c7ca9e6d1a1829c23dd213.bindTooltip(
+                `<div>
+                     Hotspot 44 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74da2f8bca76ad3468cb4eb7d3988196 = L.circleMarker(
+                [15.17304, 76.37813],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_7182e12e94ff8adcd405c2463fb8743f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ec2b9a508229ac08ce6ba4f272a6b1c0 = $(`<div id="html_ec2b9a508229ac08ce6ba4f272a6b1c0" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     36<br>      <b>Latitude:</b>     15.17304<br>      <b>Longitude:</b>     76.37813<br><br>      <b>Brightness:</b>     302.91<br>      <b>FRP:</b>     1.12<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     6<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_7182e12e94ff8adcd405c2463fb8743f.setContent(html_ec2b9a508229ac08ce6ba4f272a6b1c0);
+            
+        
+
+        circle_marker_74da2f8bca76ad3468cb4eb7d3988196.bindPopup(popup_7182e12e94ff8adcd405c2463fb8743f)
+        ;
+
+        
+    
+    
+            circle_marker_74da2f8bca76ad3468cb4eb7d3988196.bindTooltip(
+                `<div>
+                     Hotspot 36 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5aac02c98c8a3c4565e5e93c586f3eae = L.circleMarker(
+                [15.17686, 76.65517],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_b4ea9f03ca0905b66f04019dc8964a58 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8f7514f694886bb21e462f43d82b993b = $(`<div id="html_8f7514f694886bb21e462f43d82b993b" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     11<br>      <b>Latitude:</b>     15.17686<br>      <b>Longitude:</b>     76.65517<br><br>      <b>Brightness:</b>     332.84<br>      <b>FRP:</b>     1.95<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     15<br>      <b>Active days:</b>     4<br>      <b>Persistent:</b>     1<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     5<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_b4ea9f03ca0905b66f04019dc8964a58.setContent(html_8f7514f694886bb21e462f43d82b993b);
+            
+        
+
+        circle_marker_5aac02c98c8a3c4565e5e93c586f3eae.bindPopup(popup_b4ea9f03ca0905b66f04019dc8964a58)
+        ;
+
+        
+    
+    
+            circle_marker_5aac02c98c8a3c4565e5e93c586f3eae.bindTooltip(
+                `<div>
+                     Hotspot 11 | Priority 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c89b9ede3b0a8da41fbb6e2759ca6ee1 = L.circleMarker(
+                [17.36981, 77.44453],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_30c3233808bd96dcca9ee87fbbfc3f05 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c7615041941ad8a59ab90d171876b132 = $(`<div id="html_c7615041941ad8a59ab90d171876b132" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     54<br>      <b>Latitude:</b>     17.36981<br>      <b>Longitude:</b>     77.44453<br><br>      <b>Brightness:</b>     304.85<br>      <b>FRP:</b>     0.74<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     1<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_30c3233808bd96dcca9ee87fbbfc3f05.setContent(html_c7615041941ad8a59ab90d171876b132);
+            
+        
+
+        circle_marker_c89b9ede3b0a8da41fbb6e2759ca6ee1.bindPopup(popup_30c3233808bd96dcca9ee87fbbfc3f05)
+        ;
+
+        
+    
+    
+            circle_marker_c89b9ede3b0a8da41fbb6e2759ca6ee1.bindTooltip(
+                `<div>
+                     Hotspot 54 | Priority 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55d93a9e5f2ffe7a387608df38a95471 = L.circleMarker(
+                [15.16826, 76.67259],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_aa3c69312ee2fb90694e6de806fea1d2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2a574f77b27604fa2e2be1fe03f4aa1b = $(`<div id="html_2a574f77b27604fa2e2be1fe03f4aa1b" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     14<br>      <b>Latitude:</b>     15.16826<br>      <b>Longitude:</b>     76.67259<br><br>      <b>Brightness:</b>     314.56<br>      <b>FRP:</b>     2.01<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     1<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_aa3c69312ee2fb90694e6de806fea1d2.setContent(html_2a574f77b27604fa2e2be1fe03f4aa1b);
+            
+        
+
+        circle_marker_55d93a9e5f2ffe7a387608df38a95471.bindPopup(popup_aa3c69312ee2fb90694e6de806fea1d2)
+        ;
+
+        
+    
+    
+            circle_marker_55d93a9e5f2ffe7a387608df38a95471.bindTooltip(
+                `<div>
+                     Hotspot 14 | Priority 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40c474afb2920af6fab4d1ff0bd489db = L.circleMarker(
+                [15.17487, 76.6763],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_d4446fe7ee5b01aabfb11d8bbc1f0b47 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e8e5a95bf69d9b2d3f1e26e78a0892d2 = $(`<div id="html_e8e5a95bf69d9b2d3f1e26e78a0892d2" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     40<br>      <b>Latitude:</b>     15.17487<br>      <b>Longitude:</b>     76.6763<br><br>      <b>Brightness:</b>     304.85<br>      <b>FRP:</b>     2.25<br>      <b>Land cover:</b>     Built-up<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     1<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_d4446fe7ee5b01aabfb11d8bbc1f0b47.setContent(html_e8e5a95bf69d9b2d3f1e26e78a0892d2);
+            
+        
+
+        circle_marker_40c474afb2920af6fab4d1ff0bd489db.bindPopup(popup_d4446fe7ee5b01aabfb11d8bbc1f0b47)
+        ;
+
+        
+    
+    
+            circle_marker_40c474afb2920af6fab4d1ff0bd489db.bindTooltip(
+                `<div>
+                     Hotspot 40 | Priority 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d3d86f579e25adb0b53ff8f6a3716e2 = L.circleMarker(
+                [15.37479, 75.96941],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_4c70aa9c2e5d144f69b12f9f79f91e95 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_09ef422dbed2314e4b6932a1155d9af4 = $(`<div id="html_09ef422dbed2314e4b6932a1155d9af4" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     28<br>      <b>Latitude:</b>     15.37479<br>      <b>Longitude:</b>     75.96941<br><br>      <b>Brightness:</b>     338.72<br>      <b>FRP:</b>     10.11<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_4c70aa9c2e5d144f69b12f9f79f91e95.setContent(html_09ef422dbed2314e4b6932a1155d9af4);
+            
+        
+
+        circle_marker_8d3d86f579e25adb0b53ff8f6a3716e2.bindPopup(popup_4c70aa9c2e5d144f69b12f9f79f91e95)
+        ;
+
+        
+    
+    
+            circle_marker_8d3d86f579e25adb0b53ff8f6a3716e2.bindTooltip(
+                `<div>
+                     Hotspot 28 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5c338abab1131a5d5f249ee672709ea2 = L.circleMarker(
+                [15.37652, 75.97082],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_1b4c8365b23a373cc952931b2ff4dc27 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_369ea93f3dd6b5d8bb0f2739e4e7af6f = $(`<div id="html_369ea93f3dd6b5d8bb0f2739e4e7af6f" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     29<br>      <b>Latitude:</b>     15.37652<br>      <b>Longitude:</b>     75.97082<br><br>      <b>Brightness:</b>     340.52<br>      <b>FRP:</b>     13.29<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_1b4c8365b23a373cc952931b2ff4dc27.setContent(html_369ea93f3dd6b5d8bb0f2739e4e7af6f);
+            
+        
+
+        circle_marker_5c338abab1131a5d5f249ee672709ea2.bindPopup(popup_1b4c8365b23a373cc952931b2ff4dc27)
+        ;
+
+        
+    
+    
+            circle_marker_5c338abab1131a5d5f249ee672709ea2.bindTooltip(
+                `<div>
+                     Hotspot 29 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2e6f2833614b06647a734a00bdf42d5 = L.circleMarker(
+                [15.40017, 77.02663],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_63ec0683fbcd80a80cb8b1f69aa96ea7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f130e5a6ea5ad09965f18178a8b36af8 = $(`<div id="html_f130e5a6ea5ad09965f18178a8b36af8" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     1<br>      <b>Latitude:</b>     15.40017<br>      <b>Longitude:</b>     77.02663<br><br>      <b>Brightness:</b>     336.03<br>      <b>FRP:</b>     3.03<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_63ec0683fbcd80a80cb8b1f69aa96ea7.setContent(html_f130e5a6ea5ad09965f18178a8b36af8);
+            
+        
+
+        circle_marker_d2e6f2833614b06647a734a00bdf42d5.bindPopup(popup_63ec0683fbcd80a80cb8b1f69aa96ea7)
+        ;
+
+        
+    
+    
+            circle_marker_d2e6f2833614b06647a734a00bdf42d5.bindTooltip(
+                `<div>
+                     Hotspot 1 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55e755cac16c65e5f92b81fa34ed5d90 = L.circleMarker(
+                [15.82326, 76.42226],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_bc12641d685e3474f3ffc884a6ac3e53 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_89670294814d3cc70ffa20821d8421b2 = $(`<div id="html_89670294814d3cc70ffa20821d8421b2" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     0<br>      <b>Latitude:</b>     15.82326<br>      <b>Longitude:</b>     76.42226<br><br>      <b>Brightness:</b>     332.69<br>      <b>FRP:</b>     2.48<br>      <b>Land cover:</b>     Shrubland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_bc12641d685e3474f3ffc884a6ac3e53.setContent(html_89670294814d3cc70ffa20821d8421b2);
+            
+        
+
+        circle_marker_55e755cac16c65e5f92b81fa34ed5d90.bindPopup(popup_bc12641d685e3474f3ffc884a6ac3e53)
+        ;
+
+        
+    
+    
+            circle_marker_55e755cac16c65e5f92b81fa34ed5d90.bindTooltip(
+                `<div>
+                     Hotspot 0 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca05bf3bef4ad4bedb1cd5014149074b = L.circleMarker(
+                [15.20712, 75.79704],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_46b09284665b1b9a3e5fd17faabd7778 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1547b74e2bb405190bfc11a95213aa84 = $(`<div id="html_1547b74e2bb405190bfc11a95213aa84" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     3<br>      <b>Latitude:</b>     15.20712<br>      <b>Longitude:</b>     75.79704<br><br>      <b>Brightness:</b>     339.7<br>      <b>FRP:</b>     1.84<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_46b09284665b1b9a3e5fd17faabd7778.setContent(html_1547b74e2bb405190bfc11a95213aa84);
+            
+        
+
+        circle_marker_ca05bf3bef4ad4bedb1cd5014149074b.bindPopup(popup_46b09284665b1b9a3e5fd17faabd7778)
+        ;
+
+        
+    
+    
+            circle_marker_ca05bf3bef4ad4bedb1cd5014149074b.bindTooltip(
+                `<div>
+                     Hotspot 3 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9683ea429e27ab1a853047e2c7501256 = L.circleMarker(
+                [17.30929, 77.62043],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_1aa4c86b5c5b393e3ac067ff9a0e9556 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fd5ca8ad891cc42f4d1a8f61bc7ab74d = $(`<div id="html_fd5ca8ad891cc42f4d1a8f61bc7ab74d" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     6<br>      <b>Latitude:</b>     17.30929<br>      <b>Longitude:</b>     77.62043<br><br>      <b>Brightness:</b>     330.79<br>      <b>FRP:</b>     3.08<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_1aa4c86b5c5b393e3ac067ff9a0e9556.setContent(html_fd5ca8ad891cc42f4d1a8f61bc7ab74d);
+            
+        
+
+        circle_marker_9683ea429e27ab1a853047e2c7501256.bindPopup(popup_1aa4c86b5c5b393e3ac067ff9a0e9556)
+        ;
+
+        
+    
+    
+            circle_marker_9683ea429e27ab1a853047e2c7501256.bindTooltip(
+                `<div>
+                     Hotspot 6 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a6d5a6c87bde32b0a22053b212f0716 = L.circleMarker(
+                [17.69838, 75.36028],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_b9dfb93618878c36db26b3160edeb108 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5d71c5bb40721fc69d6ca25e4fd29223 = $(`<div id="html_5d71c5bb40721fc69d6ca25e4fd29223" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     7<br>      <b>Latitude:</b>     17.69838<br>      <b>Longitude:</b>     75.36028<br><br>      <b>Brightness:</b>     331.99<br>      <b>FRP:</b>     1.85<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_b9dfb93618878c36db26b3160edeb108.setContent(html_5d71c5bb40721fc69d6ca25e4fd29223);
+            
+        
+
+        circle_marker_7a6d5a6c87bde32b0a22053b212f0716.bindPopup(popup_b9dfb93618878c36db26b3160edeb108)
+        ;
+
+        
+    
+    
+            circle_marker_7a6d5a6c87bde32b0a22053b212f0716.bindTooltip(
+                `<div>
+                     Hotspot 7 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cd625265a5af333ff70cea46b377090 = L.circleMarker(
+                [15.21043, 75.79651],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_632020f57375de118b150481d63fe6ae = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_def24500ec54dc0cd6ee8e08c9438ab2 = $(`<div id="html_def24500ec54dc0cd6ee8e08c9438ab2" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     2<br>      <b>Latitude:</b>     15.21043<br>      <b>Longitude:</b>     75.79651<br><br>      <b>Brightness:</b>     337.14<br>      <b>FRP:</b>     3.93<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_632020f57375de118b150481d63fe6ae.setContent(html_def24500ec54dc0cd6ee8e08c9438ab2);
+            
+        
+
+        circle_marker_5cd625265a5af333ff70cea46b377090.bindPopup(popup_632020f57375de118b150481d63fe6ae)
+        ;
+
+        
+    
+    
+            circle_marker_5cd625265a5af333ff70cea46b377090.bindTooltip(
+                `<div>
+                     Hotspot 2 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a239b9426716c4a4e44182a280b92003 = L.circleMarker(
+                [16.61314, 75.89799],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_7538b318b9b3efe50e1e4b78f55ee5fa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_796549706108117e95f3374f0c9abf4b = $(`<div id="html_796549706108117e95f3374f0c9abf4b" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     5<br>      <b>Latitude:</b>     16.61314<br>      <b>Longitude:</b>     75.89799<br><br>      <b>Brightness:</b>     338.35<br>      <b>FRP:</b>     2.37<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_7538b318b9b3efe50e1e4b78f55ee5fa.setContent(html_796549706108117e95f3374f0c9abf4b);
+            
+        
+
+        circle_marker_a239b9426716c4a4e44182a280b92003.bindPopup(popup_7538b318b9b3efe50e1e4b78f55ee5fa)
+        ;
+
+        
+    
+    
+            circle_marker_a239b9426716c4a4e44182a280b92003.bindTooltip(
+                `<div>
+                     Hotspot 5 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_070e7f51a62449cbb00e1877ece5c3ef = L.circleMarker(
+                [15.02515, 76.50147],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_222212564513e6128d6dbff7dcd0c562 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d27141062eab76319a301f39f4bf8591 = $(`<div id="html_d27141062eab76319a301f39f4bf8591" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     17<br>      <b>Latitude:</b>     15.02515<br>      <b>Longitude:</b>     76.50147<br><br>      <b>Brightness:</b>     309.08<br>      <b>FRP:</b>     0.8<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_222212564513e6128d6dbff7dcd0c562.setContent(html_d27141062eab76319a301f39f4bf8591);
+            
+        
+
+        circle_marker_070e7f51a62449cbb00e1877ece5c3ef.bindPopup(popup_222212564513e6128d6dbff7dcd0c562)
+        ;
+
+        
+    
+    
+            circle_marker_070e7f51a62449cbb00e1877ece5c3ef.bindTooltip(
+                `<div>
+                     Hotspot 17 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e0ce479b876c6138ae7229e83ebaaaac = L.circleMarker(
+                [15.07159, 76.86485],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_47c6d0a7b9c3d15b3ae670020dbe927f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c28eab24261dffc8ceb895dad15d713f = $(`<div id="html_c28eab24261dffc8ceb895dad15d713f" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     37<br>      <b>Latitude:</b>     15.07159<br>      <b>Longitude:</b>     76.86485<br><br>      <b>Brightness:</b>     304.18<br>      <b>FRP:</b>     1.2<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_47c6d0a7b9c3d15b3ae670020dbe927f.setContent(html_c28eab24261dffc8ceb895dad15d713f);
+            
+        
+
+        circle_marker_e0ce479b876c6138ae7229e83ebaaaac.bindPopup(popup_47c6d0a7b9c3d15b3ae670020dbe927f)
+        ;
+
+        
+    
+    
+            circle_marker_e0ce479b876c6138ae7229e83ebaaaac.bindTooltip(
+                `<div>
+                     Hotspot 37 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fc10cd3f6c71bfddf6973bf02aaf4a9 = L.circleMarker(
+                [15.38841, 75.17694],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_7a4fe6b8c345c888824b1a0dcd59a69b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_43e7242d4cc650d4affb4907f464addb = $(`<div id="html_43e7242d4cc650d4affb4907f464addb" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     30<br>      <b>Latitude:</b>     15.38841<br>      <b>Longitude:</b>     75.17694<br><br>      <b>Brightness:</b>     334.14<br>      <b>FRP:</b>     2.82<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_7a4fe6b8c345c888824b1a0dcd59a69b.setContent(html_43e7242d4cc650d4affb4907f464addb);
+            
+        
+
+        circle_marker_3fc10cd3f6c71bfddf6973bf02aaf4a9.bindPopup(popup_7a4fe6b8c345c888824b1a0dcd59a69b)
+        ;
+
+        
+    
+    
+            circle_marker_3fc10cd3f6c71bfddf6973bf02aaf4a9.bindTooltip(
+                `<div>
+                     Hotspot 30 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddc860affdd699905478ca5b76b4a7fc = L.circleMarker(
+                [15.62385, 76.98132],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_1e6e1b42b1a998ab519cb97549744a2f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1c115b82272b0c637f1fb90a8c434d4e = $(`<div id="html_1c115b82272b0c637f1fb90a8c434d4e" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     31<br>      <b>Latitude:</b>     15.62385<br>      <b>Longitude:</b>     76.98132<br><br>      <b>Brightness:</b>     334.76<br>      <b>FRP:</b>     4.54<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_1e6e1b42b1a998ab519cb97549744a2f.setContent(html_1c115b82272b0c637f1fb90a8c434d4e);
+            
+        
+
+        circle_marker_ddc860affdd699905478ca5b76b4a7fc.bindPopup(popup_1e6e1b42b1a998ab519cb97549744a2f)
+        ;
+
+        
+    
+    
+            circle_marker_ddc860affdd699905478ca5b76b4a7fc.bindTooltip(
+                `<div>
+                     Hotspot 31 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18ca9af694bb27badeb135b0e797380e = L.circleMarker(
+                [15.59263, 76.72092],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_9ac0fca97c53c6de1c1377aa88897985 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_54549ad8852c78cad57130b0c2791f4a = $(`<div id="html_54549ad8852c78cad57130b0c2791f4a" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     32<br>      <b>Latitude:</b>     15.59263<br>      <b>Longitude:</b>     76.72092<br><br>      <b>Brightness:</b>     337.81<br>      <b>FRP:</b>     11.21<br>      <b>Land cover:</b>     Shrubland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_9ac0fca97c53c6de1c1377aa88897985.setContent(html_54549ad8852c78cad57130b0c2791f4a);
+            
+        
+
+        circle_marker_18ca9af694bb27badeb135b0e797380e.bindPopup(popup_9ac0fca97c53c6de1c1377aa88897985)
+        ;
+
+        
+    
+    
+            circle_marker_18ca9af694bb27badeb135b0e797380e.bindTooltip(
+                `<div>
+                     Hotspot 32 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f45bf6a6f229c5d0d1c73ca74acdf35 = L.circleMarker(
+                [15.96467, 76.64512],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_524d87cddfc4154f2abfaaac144df487 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_061fa171f201f620e1972d968beb0556 = $(`<div id="html_061fa171f201f620e1972d968beb0556" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     33<br>      <b>Latitude:</b>     15.96467<br>      <b>Longitude:</b>     76.64512<br><br>      <b>Brightness:</b>     338.41<br>      <b>FRP:</b>     6.84<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_524d87cddfc4154f2abfaaac144df487.setContent(html_061fa171f201f620e1972d968beb0556);
+            
+        
+
+        circle_marker_0f45bf6a6f229c5d0d1c73ca74acdf35.bindPopup(popup_524d87cddfc4154f2abfaaac144df487)
+        ;
+
+        
+    
+    
+            circle_marker_0f45bf6a6f229c5d0d1c73ca74acdf35.bindTooltip(
+                `<div>
+                     Hotspot 33 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d8847b1ff610a47071e4ea842f9303c = L.circleMarker(
+                [15.17753, 77.1048],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_7e954fd1a99ea26aaab9cb05626de5b2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_83eb294cc812c94c8b65bb3f6dc46131 = $(`<div id="html_83eb294cc812c94c8b65bb3f6dc46131" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     45<br>      <b>Latitude:</b>     15.17753<br>      <b>Longitude:</b>     77.1048<br><br>      <b>Brightness:</b>     302.12<br>      <b>FRP:</b>     1.65<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_7e954fd1a99ea26aaab9cb05626de5b2.setContent(html_83eb294cc812c94c8b65bb3f6dc46131);
+            
+        
+
+        circle_marker_0d8847b1ff610a47071e4ea842f9303c.bindPopup(popup_7e954fd1a99ea26aaab9cb05626de5b2)
+        ;
+
+        
+    
+    
+            circle_marker_0d8847b1ff610a47071e4ea842f9303c.bindTooltip(
+                `<div>
+                     Hotspot 45 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78d91ac7be2954b72027adff14b6263d = L.circleMarker(
+                [15.17356, 76.78545],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_9185c9e93ce84fc210fbab64925ccbf2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3db0cd264030e6314e13bbcb7e94d896 = $(`<div id="html_3db0cd264030e6314e13bbcb7e94d896" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     41<br>      <b>Latitude:</b>     15.17356<br>      <b>Longitude:</b>     76.78545<br><br>      <b>Brightness:</b>     303.36<br>      <b>FRP:</b>     0.74<br>      <b>Land cover:</b>     Bare / sparse vegetation<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_9185c9e93ce84fc210fbab64925ccbf2.setContent(html_3db0cd264030e6314e13bbcb7e94d896);
+            
+        
+
+        circle_marker_78d91ac7be2954b72027adff14b6263d.bindPopup(popup_9185c9e93ce84fc210fbab64925ccbf2)
+        ;
+
+        
+    
+    
+            circle_marker_78d91ac7be2954b72027adff14b6263d.bindTooltip(
+                `<div>
+                     Hotspot 41 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2bc79330cf0045998e09f3166982b90b = L.circleMarker(
+                [15.30107, 76.22134],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_ab60e78a8a9c9cb09f43513257dc00ee = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2ecb9823745a63b179b07bb81d1877cd = $(`<div id="html_2ecb9823745a63b179b07bb81d1877cd" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     38<br>      <b>Latitude:</b>     15.30107<br>      <b>Longitude:</b>     76.22134<br><br>      <b>Brightness:</b>     302.63<br>      <b>FRP:</b>     0.48<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_ab60e78a8a9c9cb09f43513257dc00ee.setContent(html_2ecb9823745a63b179b07bb81d1877cd);
+            
+        
+
+        circle_marker_2bc79330cf0045998e09f3166982b90b.bindPopup(popup_ab60e78a8a9c9cb09f43513257dc00ee)
+        ;
+
+        
+    
+    
+            circle_marker_2bc79330cf0045998e09f3166982b90b.bindTooltip(
+                `<div>
+                     Hotspot 38 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bf863b5b44b460d0b065588684aca04 = L.circleMarker(
+                [15.36418, 76.30761],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_691380763675d730acd36aac6f92e4b1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cd3d53fb047796af5e985aeaf22b6b71 = $(`<div id="html_cd3d53fb047796af5e985aeaf22b6b71" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     46<br>      <b>Latitude:</b>     15.36418<br>      <b>Longitude:</b>     76.30761<br><br>      <b>Brightness:</b>     302.16<br>      <b>FRP:</b>     0.47<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_691380763675d730acd36aac6f92e4b1.setContent(html_cd3d53fb047796af5e985aeaf22b6b71);
+            
+        
+
+        circle_marker_9bf863b5b44b460d0b065588684aca04.bindPopup(popup_691380763675d730acd36aac6f92e4b1)
+        ;
+
+        
+    
+    
+            circle_marker_9bf863b5b44b460d0b065588684aca04.bindTooltip(
+                `<div>
+                     Hotspot 46 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b962c7d5c770108ccd2667d64e10e8ba = L.circleMarker(
+                [15.68853, 77.96468],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_27935800567d5331fc0d63204f691dda = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_977348cf0032f65c17e8120f0a606efc = $(`<div id="html_977348cf0032f65c17e8120f0a606efc" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     50<br>      <b>Latitude:</b>     15.68853<br>      <b>Longitude:</b>     77.96468<br><br>      <b>Brightness:</b>     343.01<br>      <b>FRP:</b>     8.71<br>      <b>Land cover:</b>     Grassland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_27935800567d5331fc0d63204f691dda.setContent(html_977348cf0032f65c17e8120f0a606efc);
+            
+        
+
+        circle_marker_b962c7d5c770108ccd2667d64e10e8ba.bindPopup(popup_27935800567d5331fc0d63204f691dda)
+        ;
+
+        
+    
+    
+            circle_marker_b962c7d5c770108ccd2667d64e10e8ba.bindTooltip(
+                `<div>
+                     Hotspot 50 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_836709a15228deb59d40502125d7e3e9 = L.circleMarker(
+                [15.16473, 77.47666],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_81279d1b1bb2b33b119a047db31d842b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_81d1bb2eb806eccf8d000e325c0c82ad = $(`<div id="html_81d1bb2eb806eccf8d000e325c0c82ad" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     47<br>      <b>Latitude:</b>     15.16473<br>      <b>Longitude:</b>     77.47666<br><br>      <b>Brightness:</b>     341.18<br>      <b>FRP:</b>     13.0<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_81279d1b1bb2b33b119a047db31d842b.setContent(html_81d1bb2eb806eccf8d000e325c0c82ad);
+            
+        
+
+        circle_marker_836709a15228deb59d40502125d7e3e9.bindPopup(popup_81279d1b1bb2b33b119a047db31d842b)
+        ;
+
+        
+    
+    
+            circle_marker_836709a15228deb59d40502125d7e3e9.bindTooltip(
+                `<div>
+                     Hotspot 47 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99c3dc3239bc7b5e695770f1df65b735 = L.circleMarker(
+                [15.23728, 75.21181],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_79d98360b592d7bdd28f5a251a5fb744 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9972a9d9d3f2167481d600d429e04490 = $(`<div id="html_9972a9d9d3f2167481d600d429e04490" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     48<br>      <b>Latitude:</b>     15.23728<br>      <b>Longitude:</b>     75.21181<br><br>      <b>Brightness:</b>     339.03<br>      <b>FRP:</b>     2.1<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_79d98360b592d7bdd28f5a251a5fb744.setContent(html_9972a9d9d3f2167481d600d429e04490);
+            
+        
+
+        circle_marker_99c3dc3239bc7b5e695770f1df65b735.bindPopup(popup_79d98360b592d7bdd28f5a251a5fb744)
+        ;
+
+        
+    
+    
+            circle_marker_99c3dc3239bc7b5e695770f1df65b735.bindTooltip(
+                `<div>
+                     Hotspot 48 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_320e0a14f1a8abeae133c7c56af2f4c4 = L.circleMarker(
+                [15.25832, 75.12794],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_889678b1424520edd6238ddc696985d2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_27bd2711019d7abd35c830dd138cd6e2 = $(`<div id="html_27bd2711019d7abd35c830dd138cd6e2" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     49<br>      <b>Latitude:</b>     15.25832<br>      <b>Longitude:</b>     75.12794<br><br>      <b>Brightness:</b>     337.48<br>      <b>FRP:</b>     2.23<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_889678b1424520edd6238ddc696985d2.setContent(html_27bd2711019d7abd35c830dd138cd6e2);
+            
+        
+
+        circle_marker_320e0a14f1a8abeae133c7c56af2f4c4.bindPopup(popup_889678b1424520edd6238ddc696985d2)
+        ;
+
+        
+    
+    
+            circle_marker_320e0a14f1a8abeae133c7c56af2f4c4.bindTooltip(
+                `<div>
+                     Hotspot 49 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76f8cabf116b6ead3b87d74c64023f3e = L.circleMarker(
+                [17.75496, 75.41422],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_8fb74258a2b036e53c47f6b72c1b2dba = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1ab32a5ea6ae34743551537fb55f0fe1 = $(`<div id="html_1ab32a5ea6ae34743551537fb55f0fe1" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     53<br>      <b>Latitude:</b>     17.75496<br>      <b>Longitude:</b>     75.41422<br><br>      <b>Brightness:</b>     342.69<br>      <b>FRP:</b>     7.8<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_8fb74258a2b036e53c47f6b72c1b2dba.setContent(html_1ab32a5ea6ae34743551537fb55f0fe1);
+            
+        
+
+        circle_marker_76f8cabf116b6ead3b87d74c64023f3e.bindPopup(popup_8fb74258a2b036e53c47f6b72c1b2dba)
+        ;
+
+        
+    
+    
+            circle_marker_76f8cabf116b6ead3b87d74c64023f3e.bindTooltip(
+                `<div>
+                     Hotspot 53 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a383dddb8f8cfec54b10592b56601503 = L.circleMarker(
+                [15.41398, 75.10604],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_fe4c35f447b3d6cbc976aa6eba141f0b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_04f73eddfca60fea86efdc25da724c79 = $(`<div id="html_04f73eddfca60fea86efdc25da724c79" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     52<br>      <b>Latitude:</b>     15.41398<br>      <b>Longitude:</b>     75.10604<br><br>      <b>Brightness:</b>     336.47<br>      <b>FRP:</b>     2.36<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_fe4c35f447b3d6cbc976aa6eba141f0b.setContent(html_04f73eddfca60fea86efdc25da724c79);
+            
+        
+
+        circle_marker_a383dddb8f8cfec54b10592b56601503.bindPopup(popup_fe4c35f447b3d6cbc976aa6eba141f0b)
+        ;
+
+        
+    
+    
+            circle_marker_a383dddb8f8cfec54b10592b56601503.bindTooltip(
+                `<div>
+                     Hotspot 52 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ecc8e82d6baa42c49334c0ac115138f = L.circleMarker(
+                [15.48376, 75.66547],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_2824c52df0ba00fdfe844f0765ff2936 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7186e0bfb92a4f0273f8b0a5f59037e9 = $(`<div id="html_7186e0bfb92a4f0273f8b0a5f59037e9" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     51<br>      <b>Latitude:</b>     15.48376<br>      <b>Longitude:</b>     75.66547<br><br>      <b>Brightness:</b>     340.78<br>      <b>FRP:</b>     8.58<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_2824c52df0ba00fdfe844f0765ff2936.setContent(html_7186e0bfb92a4f0273f8b0a5f59037e9);
+            
+        
+
+        circle_marker_7ecc8e82d6baa42c49334c0ac115138f.bindPopup(popup_2824c52df0ba00fdfe844f0765ff2936)
+        ;
+
+        
+    
+    
+            circle_marker_7ecc8e82d6baa42c49334c0ac115138f.bindTooltip(
+                `<div>
+                     Hotspot 51 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_465f250672d606644a337d35fc7884c7 = L.circleMarker(
+                [15.18322, 76.64294],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_79c63e6a4077e364910fe100bb0d2d9b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_210b299dffbee6f767c9cfaa47c9d097 = $(`<div id="html_210b299dffbee6f767c9cfaa47c9d097" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     57<br>      <b>Latitude:</b>     15.18322<br>      <b>Longitude:</b>     76.64294<br><br>      <b>Brightness:</b>     340.89<br>      <b>FRP:</b>     6.02<br>      <b>Land cover:</b>     Tree cover<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_79c63e6a4077e364910fe100bb0d2d9b.setContent(html_210b299dffbee6f767c9cfaa47c9d097);
+            
+        
+
+        circle_marker_465f250672d606644a337d35fc7884c7.bindPopup(popup_79c63e6a4077e364910fe100bb0d2d9b)
+        ;
+
+        
+    
+    
+            circle_marker_465f250672d606644a337d35fc7884c7.bindTooltip(
+                `<div>
+                     Hotspot 57 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd558a32d4cc76132f044104b7ef1298 = L.circleMarker(
+                [15.24926, 75.19452],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_cc987db0a2fc653e378b3fbb6eaf9e2a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f18de7f7fb6b24dddb842e138556c22d = $(`<div id="html_f18de7f7fb6b24dddb842e138556c22d" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     58<br>      <b>Latitude:</b>     15.24926<br>      <b>Longitude:</b>     75.19452<br><br>      <b>Brightness:</b>     330.95<br>      <b>FRP:</b>     3.49<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_cc987db0a2fc653e378b3fbb6eaf9e2a.setContent(html_f18de7f7fb6b24dddb842e138556c22d);
+            
+        
+
+        circle_marker_fd558a32d4cc76132f044104b7ef1298.bindPopup(popup_cc987db0a2fc653e378b3fbb6eaf9e2a)
+        ;
+
+        
+    
+    
+            circle_marker_fd558a32d4cc76132f044104b7ef1298.bindTooltip(
+                `<div>
+                     Hotspot 58 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af9b7caf316462956ddde3cde146e740 = L.circleMarker(
+                [15.24818, 75.19145],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_e1d8ecb6c0149b4094d5edc66c527982 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c76dcd56ac9e239c8a0a17dd35dab504 = $(`<div id="html_c76dcd56ac9e239c8a0a17dd35dab504" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     59<br>      <b>Latitude:</b>     15.24818<br>      <b>Longitude:</b>     75.19145<br><br>      <b>Brightness:</b>     332.29<br>      <b>FRP:</b>     3.02<br>      <b>Land cover:</b>     Cropland<br><br>      <b>Detections:</b>     2<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_e1d8ecb6c0149b4094d5edc66c527982.setContent(html_c76dcd56ac9e239c8a0a17dd35dab504);
+            
+        
+
+        circle_marker_af9b7caf316462956ddde3cde146e740.bindPopup(popup_e1d8ecb6c0149b4094d5edc66c527982)
+        ;
+
+        
+    
+    
+            circle_marker_af9b7caf316462956ddde3cde146e740.bindTooltip(
+                `<div>
+                     Hotspot 59 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_053ee39475a6138d51e651b2ed84bc92 = L.circleMarker(
+                [16.5696, 75.22845],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_8d74822d2929dd6c15360ac480421c3a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1e24632c875c8d9da2c08f95b826a598 = $(`<div id="html_1e24632c875c8d9da2c08f95b826a598" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     60<br>      <b>Latitude:</b>     16.5696<br>      <b>Longitude:</b>     75.22845<br><br>      <b>Brightness:</b>     334.66<br>      <b>FRP:</b>     16.85<br>      <b>Land cover:</b>     Grassland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_8d74822d2929dd6c15360ac480421c3a.setContent(html_1e24632c875c8d9da2c08f95b826a598);
+            
+        
+
+        circle_marker_053ee39475a6138d51e651b2ed84bc92.bindPopup(popup_8d74822d2929dd6c15360ac480421c3a)
+        ;
+
+        
+    
+    
+            circle_marker_053ee39475a6138d51e651b2ed84bc92.bindTooltip(
+                `<div>
+                     Hotspot 60 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8be79e4ff52eb6d650fc7d77253395c4 = L.circleMarker(
+                [17.58362, 75.70586],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+        
+    
+        var popup_ff6b7c26e88d143bcadc9a0c1d4c2754 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_02f34fe11586fea5b7ad6a6ebff8a1b4 = $(`<div id="html_02f34fe11586fea5b7ad6a6ebff8a1b4" style="width: 100.0%; height: 100.0%;">     <b>Thermal Detection Review</b><br><br>      <b>Hotspot ID:</b>     61<br>      <b>Latitude:</b>     17.58362<br>      <b>Longitude:</b>     75.70586<br><br>      <b>Brightness:</b>     333.38<br>      <b>FRP:</b>     6.18<br>      <b>Land cover:</b>     Grassland<br><br>      <b>Detections:</b>     1<br>      <b>Active days:</b>     1<br>      <b>Persistent:</b>     0<br><br>      <b>Industrial context:</b>     osm_unavailable<br>      <b>OSM distance:</b>     nan<br>      <b>OSM type:</b>     Unknown<br><br>      <b>Review priority:</b>     0<br>      <b>Current label:</b>     Unknown     </div>`)[0];
+                popup_ff6b7c26e88d143bcadc9a0c1d4c2754.setContent(html_02f34fe11586fea5b7ad6a6ebff8a1b4);
+            
+        
+
+        circle_marker_8be79e4ff52eb6d650fc7d77253395c4.bindPopup(popup_ff6b7c26e88d143bcadc9a0c1d4c2754)
+        ;
+
+        
+    
+    
+            circle_marker_8be79e4ff52eb6d650fc7d77253395c4.bindTooltip(
+                `<div>
+                     Hotspot 61 | Priority 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_659e3febe09e8aa716daf9c8b5e6d0ee_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_e9a2ed7cbba59cbdbaa324462a033f9f,
+                    "Satellite Imagery" : tile_layer_0caa797324295e5265d3a4dd8698bbdf,
+                    "OpenStreetMap" : tile_layer_b4eb8a17e4a4a95f180528d1c9345396,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_659e3febe09e8aa716daf9c8b5e6d0ee = L.control.layers(
+                layer_control_659e3febe09e8aa716daf9c8b5e6d0ee_layers.base_layers,
+                layer_control_659e3febe09e8aa716daf9c8b5e6d0ee_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_f2cb9382757c6d096ee67293eec7d18c);
+
+        
+</script>
+</html>
